@@ -345,7 +345,7 @@ h6.text-green ::selection, h6.text-green::selection { background: var(--color-in
   .site-nav__links {
     margin-left: clamp(0px, 1.5vw, 64px) !important;
     gap: clamp(14px, 1.5vw, 36px) !important;
-    font-size: clamp(13px, 0.9vw, 16px) !important;
+    font-size: clamp(16px, 1.6vw, 28px) !important;
   }
   .site-nav__cta .btn {
     font-size: clamp(12px, 0.85vw, 15px);
@@ -433,9 +433,9 @@ h6.text-green ::selection, h6.text-green::selection { background: var(--color-in
 .nav-overlay__close:hover { color: var(--color-green); }
 
 .nav-overlay__link {
-  font-family: 'Urban Grotesk', Archivo, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
+  font-family: 'SVGD', Archivo, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
   color: var(--color-ink);
   padding: 12px 4px;
   transition: color .2s;
