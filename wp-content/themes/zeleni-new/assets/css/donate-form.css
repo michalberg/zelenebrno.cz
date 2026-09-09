@@ -1,0 +1,72 @@
+/* Donate form — shared component, ported from natalievencovska.cz so the
+   same widget can be dropped on the homepage CTA band and on /darujte. */
+
+.zb-donate { max-width: 100%; }
+.zb-donate-teaser { max-width: 640px; }
+.zb-donate-teaser .zb-donate-amounts { margin-bottom: 16px; }
+.zb-donate-amounts { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; align-items: center; }
+.zb-amount-btn {
+  padding: 9px 16px; border-radius: 4px; border: 2px solid #d5eed8;
+  font-size: 15px; font-weight: 700; cursor: pointer; background: #fff;
+  transition: all 0.2s; font-family: 'Archivo', sans-serif;
+}
+.zb-amount-btn:hover, .zb-amount-btn.is-selected {
+  border-color: var(--color-green); background: var(--color-green); color: #000;
+}
+.zb-amount-custom {
+  padding: 9px 12px; border-radius: 4px; border: 2px solid #ddeee2;
+  font-size: 15px; font-family: 'Archivo', sans-serif; width: 108px;
+  outline: none; background: #fff; transition: border-color 0.2s;
+}
+.zb-amount-custom:focus, .zb-amount-custom.has-value { border-color: var(--color-green); }
+
+.zb-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.zb-city-row { grid-template-columns: 2fr 1fr; }
+.zb-form-field { display: flex; flex-direction: column; gap: 5px; }
+.zb-form-field label { font-size: 12px; font-weight: 700; color: #444; letter-spacing: 0.04em; text-transform: uppercase; }
+.zb-form-field input {
+  padding: 11px 14px; border: 2px solid #ddeee2; border-radius: 4px;
+  font-size: 15px; font-family: 'Archivo', sans-serif;
+  transition: border-color 0.2s; outline: none; color: #000; background: #fff;
+}
+.zb-form-field input:focus { border-color: var(--color-green); }
+.zb-mb { margin-bottom: 14px; }
+
+.zb-submit-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 6px; }
+.zb-submit-note { font-size: 13px; color: #666; line-height: 1.45; flex: 1; min-width: 200px; }
+@media (max-width: 640px) {
+  .zb-submit-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .zb-submit-row .btn { width: 100%; }
+  .zb-form-row, .zb-city-row { grid-template-columns: 1fr; }
+}
+.zb-legal { font-size: 11px; color: #888; line-height: 1.55; margin-top: 18px; }
+.zb-legal a { color: #067a40; text-decoration: underline; }
+.zb-legal a:hover { color: #0bd26f; }
+
+.zb-donate-success { max-width: 640px; }
+.zb-donate-success h3 { font-family: 'Tusker Grotesk', 'Tusker Grotesk SemiBold', Archivo, sans-serif; text-transform: uppercase; font-size: 28px; margin-bottom: 10px; }
+.zb-donate-success > p { margin-bottom: 20px; font-size: 16px; }
+.zb-payment-grid {
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start;
+  padding: 20px; background: #fff; border-radius: 6px; box-shadow: var(--btn-shadow);
+}
+.zb-payment-info { margin: 0; }
+.zb-payment-info > div { display: grid; grid-template-columns: 160px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #eee; }
+.zb-payment-info > div:last-child { border-bottom: none; }
+.zb-payment-info dt { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+.zb-payment-info dd { font-size: 15px; font-weight: 600; color: #222; margin: 0; word-break: break-all; }
+.zb-payment-qr { text-align: center; }
+.zb-payment-qr img { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.zb-payment-qr p { font-size: 12px; color: #666; margin-top: 6px; max-width: 220px; margin-left: auto; margin-right: auto; }
+.zb-payment-note { font-size: 13px; color: #555; margin-top: 14px; text-align: center; line-height: 1.5; }
+@media (max-width: 640px) {
+  .zb-payment-grid { grid-template-columns: 1fr; gap: 18px; }
+  .zb-payment-qr { order: -1; }
+  .zb-payment-info > div { grid-template-columns: 1fr; gap: 2px; padding: 10px 0; }
+}
+
+/* On dark backgrounds (homepage CTA band) flip field chrome to stay legible */
+.bg-ink .zb-form-field label,
+.bg-ink .zb-submit-note { color: rgba(255,255,255,0.7); }
+.bg-ink .zb-legal { color: rgba(255,255,255,0.55); }
+.bg-ink .zb-legal a { color: var(--color-pink-hot, #FF7DBE); }

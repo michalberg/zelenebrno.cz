@@ -4,13 +4,21 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="../wp-content/themes/zeleni-new/assets/img/favicon.png" rel="icon" type="image/png"/>
-<link href="../wp-content/themes/zeleni-new/assets/img/favicon.png" rel="apple-touch-icon"/>
+<link href="../wp-content/themes/zeleni-new/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
 
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="../wp-content/themes/zeleni-new/assets/css/tailwind.css" rel="stylesheet"/>
 <title>Zapoj se – Zelené Brno</title>
 <meta content="max-image-preview:large" name="robots"/>
+<meta name="description" content="Zapojte se do kampaně Zelené Brno – jako dobrovolník, dobrovolnice nebo podporovatel v ulicích i online."/>
+<link rel="canonical" href="https://zelenebrno.cz/zapoj-se/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Zelené Brno"/>
+<meta property="og:title" content="Zapoj se – Zelené Brno"/>
+<meta property="og:description" content="Zapojte se do kampaně Zelené Brno – jako dobrovolník, dobrovolnice nebo podporovatel v ulicích i online."/>
+<meta property="og:url" content="https://zelenebrno.cz/zapoj-se/"/>
+<meta name="twitter:card" content="summary_large_image"/>
 
 
 
@@ -19,6 +27,7 @@
 
 
 <link href="../wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
+<link href="../wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>
 
 <meta content="WordPress 7.1" name="generator"/>
 
@@ -33,18 +42,20 @@
 <nav class="site-nav flex items-center gap-12 px-64 bg-white">
 <a class="site-nav__brand flex items-baseline gap-2.5 leading-none" href="../">
 <span class="font-name text-green font-black text-5xl">ZELENÉ</span>
-<span class="font-svgd text-ink font-bold text-5xl">Brno</span>
+<span class="font-svgd text-ink font-bold text-5xl">Brno<span class="brand-flower" aria-hidden="true"></span></span>
 </a>
 <div class="site-nav__links font-svgd flex items-center gap-6 ml-12 text-[40px] font-semibold">
 <a class="py-1.5 hover:text-green transition-colors" href="../program/">Program</a>
 <a class="py-1.5 hover:text-green transition-colors" href="../kandidatka/">Kandidátka</a>
+<a class="py-1.5 hover:text-green transition-colors" href="../natalie-vencovska/">Natálie Vencovská</a>
 <a class="py-1.5 hover:text-green transition-colors" href="../mestske-casti/">Městské části</a>
 <a class="py-1.5 hover:text-green transition-colors" href="../jak-volit/">Jak volit</a>
 <a class="py-1.5 hover:text-green transition-colors" href="../prochazky/">Procházky</a>
 </div>
-<div class="site-nav__cta flex gap-2.5 ml-auto font-name font-normal">
-<a class="btn btn-green" href="../zapoj-se/">Zapoj se</a>
-<a class="btn btn-pink" href="https://www.lepsibrno.cz/?utm_source=zelenebrno.cz" rel="noopener" target="_blank">Podpořte nás darem</a>
+<div class="site-nav__cta flex items-center gap-2.5 ml-auto font-name font-normal">
+<img alt="Volte číslo 3" class="site-nav__ballot" src="../wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<a class="btn btn-green" href="../zapoj-se/">Zapojte se do kampaně</a>
+<a class="btn btn-pink" href="../darujte/">Darujte</a>
 </div>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle="">
 <span></span><span></span><span></span>
@@ -55,12 +66,17 @@
 <div class="nav-overlay__panel">
 <a class="nav-overlay__link" href="../program/">Program</a>
 <a class="nav-overlay__link" href="../kandidatka/">Kandidátka</a>
+<a class="nav-overlay__link" href="../natalie-vencovska/">Natálie Vencovská</a>
 <a class="nav-overlay__link" href="../mestske-casti/">Městské části</a>
 <a class="nav-overlay__link" href="../jak-volit/">Jak volit</a>
 <a class="nav-overlay__link" href="../prochazky/">Procházky</a>
 <div class="nav-overlay__cta">
-<a class="btn btn-green" href="../zapoj-se/">Zapoj se</a>
-<a class="btn btn-pink" href="https://www.lepsibrno.cz/?utm_source=zelenebrno.cz" rel="noopener" target="_blank">Podpořte nás darem</a>
+<div class="flex items-center gap-3 mb-1">
+<img alt="Volte číslo 3" class="site-nav__ballot" src="../wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<span class="font-svgd font-bold text-[15px]">Volte číslo 3</span>
+</div>
+<a class="btn btn-green" href="../zapoj-se/">Zapojte se do kampaně</a>
+<a class="btn btn-pink" href="../darujte/">Darujte</a>
 </div>
 </div>
 </div>
@@ -75,33 +91,42 @@
 <div class="mt-8">
 <a class="btn btn-green" href="https://actionnetwork.org/forms/kampan-brno?utm_source=zelenebrno.cz" rel="noopener" target="_blank">Chci pomoct s kampaní</a>
 </div>
+<p class="text-black/50 text-[14px] mt-4">Do kampaně se už přidalo přes 70 lidí.</p>
 </div>
+</section>
 </main><!-- /#site-main -->
 
 <!-- Footer -->
-<footer class="text-white py-16 max-md:py-12 bg-[#025B58]">
+<footer class="text-white pb-16 max-md:pb-12 bg-[#025B58]">
+<div class="max-w-container mx-auto px-14 max-md:px-5 mb-10 pt-8 pb-8 max-md:pt-6 max-md:pb-6 border-b border-white/15 text-center">
+<p class="font-svgd text-green text-[22px] max-md:text-[18px] font-bold">Volte Zelené Brno ve volbách 9. a 10. října.</p>
+</div>
 <div class="max-w-container mx-auto px-14 grid grid-cols-[1fr_1fr_1fr] gap-12 items-start max-md:grid-cols-1 max-md:gap-9 max-md:px-5 max-md:text-left">
 <!-- Brand and contacts -->
 <div>
-<div class="text-white font-black text-[56px] max-md:text-[36px] tracking-wide leading-none mb-10"><span class="font-name">ZELENÉ</span> <span class="font-svgd">Brno</span></div>
-<div class="text-[17px] leading-[1.55] mb-6">
+<div class="text-white font-black text-[56px] max-md:text-[36px] tracking-wide leading-none mb-10"><span class="font-name">ZELENÉ</span> <span class="font-svgd">Brno<span class="brand-flower" aria-hidden="true"></span></span></div>
+<div class="text-[14px] leading-[1.5] mb-5">
 <p class="font-bold">Natálie Vencovská</p> <p class="font-bold">lídryně kandidátky</p> <a class="underline underline-offset-2 hover:text-pink transition" href="https://natalievencovska.cz/" rel="noopener" target="_blank">natalievencovska.cz</a><br/> <a class="underline underline-offset-2 hover:text-pink transition" href="mailto:natalie@zeleni.cz">natalie@zeleni.cz</a> </div>
-<div class="text-[17px] leading-[1.55] mb-6">
+<div class="text-[14px] leading-[1.5] mb-5">
 <p class="font-bold">Matouš Vencálek</p> <p class="font-bold">spolupředseda krajské organizace</p> <a class="underline underline-offset-2 hover:text-pink transition" href="mailto:matous.vencalek@zeleni.cz">matous.vencalek@zeleni.cz</a> <p>603 931 205</p> </div>
-<div class="text-[17px] leading-[1.55] mb-7">
+<div class="text-[14px] leading-[1.5] mb-5">
 <p class="font-bold">Adéla Mišove</p> <p class="font-bold">spolupředsedkyně krajské organizace</p> <a class="underline underline-offset-2 hover:text-pink transition" href="mailto:adela.misove@gmail.com">adela.misove@gmail.com</a> </div>
 </div>
 <!-- Menu -->
 <div class="flex flex-col gap-2.5 text-[17px] leading-[1.55] font-bold">
-<a class="block hover:text-pink transition" href="../program/">Program</a>
-<a class="block hover:text-pink transition" href="../kandidatka/">Kandidátka</a>
-<a class="block hover:text-pink transition" href="../mestske-casti/">Městské části</a>
-<a class="block hover:text-pink transition" href="../jak-volit/">Jak volit</a>
-<a class="block hover:text-pink transition" href="../prochazky/">Procházky</a>
-<a class="block hover:text-pink transition" href="../zapoj-se/">Zapoj se</a>
+<img alt="Volte číslo 3" class="w-[76px] h-[76px] mb-3 max-md:mx-auto" src="../wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../program/">Program</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../kandidatka/">Kandidátka</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../natalie-vencovska/">Natálie Vencovská</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../mestske-casti/">Městské části</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../jak-volit/">Jak volit</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../prochazky/">Procházky</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../zapoj-se/">Zapoj se</a>
+<a class="block underline underline-offset-2 hover:text-pink transition" href="../aktuality/">Aktuality</a>
 </div>
 <!-- Party info (fine print) -->
 <div class="text-right text-[13px] leading-[1.5] text-white/60 max-md:text-left">
+<img alt="Protože Brno má na víc" class="w-full max-w-[280px] ml-auto mb-6 max-md:ml-0" src="../wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png"/>
 <div class="flex gap-3 justify-end max-md:justify-start mb-6">
 <a aria-label="Facebook" class="w-[52px] h-[52px] rounded-full bg-white/10 ring-1 ring-white/20 flex items-center justify-center hover:bg-white/20 transition" href="https://www.facebook.com/zelenebrno">
 <svg aria-hidden="true" class="w-6 h-6" fill="white" viewbox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg>
@@ -112,7 +137,8 @@
 </div>
 <p class="font-bold text-white/80 mb-1">Strana zelených</p>
 <p>Řešovská 495/18, 181 00 Praha 8<br/>IČ: 00409740</p>
-<a class="inline-block underline underline-offset-2 hover:text-pink transition mt-3" href="https://www.zeleni.cz/ochrana-osobnich-udaju/" rel="noopener" target="_blank">Ochrana osobních údajů</a>
+<a class="inline-block underline underline-offset-2 hover:text-pink transition mt-3" href="https://www.zeleni.cz/ochrana-osobnich-udaju/" rel="noopener" target="_blank">Ochrana osobních údajů</a><br/>
+<a class="inline-block underline underline-offset-2 hover:text-pink transition mt-2" href="../reklama/">Informace o transparentnosti kampaně</a>
 </div>
 </div>
 </footer>
@@ -144,8 +170,9 @@
 		} )( document.body );
 		</script>
 
-<script id="fancybox-js" src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?ver=5.0"></script>
+
 <script id="zeleni-main-js" src="../wp-content/themes/zeleni-new/assets/js/main.js"></script>
+<script src="../wp-content/themes/zeleni-new/assets/js/floating-widget.js"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://zelenebrno.cz/wp-includes/js/wp-emoji-release.min.js?ver=7.1"}}
 </script>
