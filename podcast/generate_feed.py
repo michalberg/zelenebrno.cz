@@ -22,9 +22,11 @@ PRAGUE_OFFSET = timedelta(hours=2)  # CEST; v zimě (CET) změň na hours=1
 
 
 def rfc2822(date_str: str) -> str:
-    dt = datetime.strptime(date_str, "%Y-%m-%d").replace(
-        hour=8, tzinfo=timezone(PRAGUE_OFFSET)
-    )
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M")
+    except ValueError:
+        dt = datetime.strptime(date_str, "%Y-%m-%d").replace(hour=8)
+    dt = dt.replace(tzinfo=timezone(PRAGUE_OFFSET))
     return dt.strftime("%a, %d %b %Y %H:%M:%S %z")
 
 
