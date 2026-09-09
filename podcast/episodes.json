@@ -1,0 +1,127 @@
+{
+  "podcast": {
+    "title": "Brno do detailu - Volební program Zeleného Brna",
+    "description": "Brno do detailu je název volebního programu koalice Zelené Brno pro komunální volby 2026. Poslechněte si jeho kapitoly jako podcast.",
+    "author": "Zelené Brno",
+    "owner_email": "michal.berg@zeleni.cz",
+    "language": "cs",
+    "explicit": false,
+    "category": "News",
+    "subcategory": "Politics",
+    "base_url": "https://zelenebrno.cz/podcast/",
+    "cover_image": "cover.png",
+    "link": "https://zelenebrno.cz/"
+  },
+  "episodes": [
+    {
+      "slug": "kapitola_01_bydleni_finalni.mp3",
+      "episode_number": 1,
+      "title": "Kapitola 1: Dostupné bydlení a výstavba",
+      "description": "Kolik bytů v Brně zeje prázdnotou a jak chce koalice Zelené Brno zrychlit opravy, výstavbu i dostupnost bydlení.",
+      "pub_date": "2026-09-09",
+      "duration": "00:07:43",
+      "file_size_bytes": 7410668,
+      "cover_image": "covers/kapitola_01.png"
+    },
+    {
+      "slug": "kapitola_02_doprava_finalni.mp3",
+      "episode_number": 2,
+      "title": "Kapitola 2: Bezpečná doprava",
+      "description": "Vize nula, bezpečné cesty do školy, MHD zdarma pro děti a seniory a plán na omezení tranzitu.",
+      "pub_date": "2026-09-16",
+      "duration": "00:06:35",
+      "file_size_bytes": 6322720,
+      "cover_image": "covers/kapitola_02.png"
+    },
+    {
+      "slug": "kapitola_03_verejny_prostor_finalni.mp3",
+      "episode_number": 3,
+      "title": "Kapitola 3: Veřejný prostor pro lidi",
+      "description": "Chodníkový standard, konec antisociálních laviček a regulace reklamy v ulicích – jak chce program proměnit veřejný prostor Brna.",
+      "pub_date": "2026-09-23",
+      "duration": "00:06:45",
+      "file_size_bytes": 6481127,
+      "cover_image": "covers/kapitola_03.png"
+    },
+    {
+      "slug": "kapitola_04_zelen_voda_stin_finalni.mp3",
+      "episode_number": 4,
+      "title": "Kapitola 4: Zeleň, voda a stín ve městě",
+      "description": "Tisíc nových stromů ročně, město jako houba zadržující dešťovou vodu a mapa tepelné zranitelnosti.",
+      "pub_date": "2026-09-30",
+      "duration": "00:05:53",
+      "file_size_bytes": 5644372,
+      "cover_image": "covers/kapitola_04.png"
+    },
+    {
+      "slug": "kapitola_05_energie_odpady_finalni.mp3",
+      "episode_number": 5,
+      "title": "Kapitola 5: Energie, odpady a čisté město",
+      "description": "Jak chce Brno snížit závislost na zemním plynu, řešit energetickou chudobu a zlepšit třídění i čistotu ulic.",
+      "pub_date": "2026-10-07",
+      "duration": "00:06:06",
+      "file_size_bytes": 5863383,
+      "cover_image": "covers/kapitola_05.png"
+    },
+    {
+      "slug": "kapitola_06_skoly_deti_finalni.mp3",
+      "episode_number": 6,
+      "title": "Kapitola 6: Školy, děti, rodiny a sport",
+      "description": "Nedostatek míst na středních školách, podpora duševního zdraví dětí, prázdninové družiny i sport pro všechny.",
+      "pub_date": "2026-10-14",
+      "duration": "00:09:54",
+      "file_size_bytes": 9512167,
+      "cover_image": "covers/kapitola_06.png"
+    },
+    {
+      "slug": "kapitola_07_senori_nouze_finalni.mp3",
+      "episode_number": 7,
+      "title": "Kapitola 7: Péče o seniory a lidi v nouzi",
+      "description": "Exekuce, bytová nouze a stárnutí populace – jak chce program pomoct lidem v krizi dřív, než se ocitnou bez domova.",
+      "pub_date": "2026-10-21",
+      "duration": "00:05:33",
+      "file_size_bytes": 5330903,
+      "cover_image": "covers/kapitola_07.png"
+    },
+    {
+      "slug": "kapitola_08_zdravi_bezpeci_finalni.mp3",
+      "episode_number": 8,
+      "title": "Kapitola 8: Zdraví, bezpečí a krizová připravenost",
+      "description": "Chybějící krizová komunikace, nedostatek lékařů v nových čtvrtích a plán na síť odolných míst pro případ výpadku elektřiny nebo povodní.",
+      "pub_date": "2026-10-28",
+      "duration": "00:07:05",
+      "file_size_bytes": 6803791,
+      "cover_image": "covers/kapitola_08.png"
+    },
+    {
+      "slug": "kapitola_09_otevrena_radnice_finalni.mp3",
+      "episode_number": 9,
+      "title": "Kapitola 9: Otevřená radnice a dobré hospodaření",
+      "description": "Tajná hlasování o miliardových zakázkách, prodražená Arena Brno a plán na transparentnější rozhodování radnice.",
+      "pub_date": "2026-11-04",
+      "duration": "00:04:52",
+      "file_size_bytes": 4676797,
+      "cover_image": "covers/kapitola_09.png"
+    },
+    {
+      "slug": "kapitola_10_mistni_ekonomika_finalni.mp3",
+      "episode_number": 10,
+      "title": "Kapitola 10: Místní ekonomika a živé centrum",
+      "description": "Jak chce program využít městské nebytové prostory, oživit centrum i tržnice a proč se má nový obyvatel Brna stát investicí, ne jen gestem.",
+      "pub_date": "2026-11-11",
+      "duration": "00:05:17",
+      "file_size_bytes": 5064663,
+      "cover_image": "covers/kapitola_10.png"
+    },
+    {
+      "slug": "kapitola_11_kultura_finalni.mp3",
+      "episode_number": 11,
+      "title": "Kapitola 11: Kultura a komunitní život",
+      "description": "Poslední díl seriálu: konec systému individuálních dotací na kulturu, budoucnost kina Scala a Kraví hory, a komunitní centra v knihovnách po celém Brně.",
+      "pub_date": "2026-11-18",
+      "duration": "00:07:25",
+      "file_size_bytes": 7116007,
+      "cover_image": "covers/kapitola_11.png"
+    }
+  ]
+}
