@@ -5,7 +5,7 @@ the site root: "" at depth 0, "../" at depth 1, "../../" at depth 2, etc.
 """
 import re
 
-_NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksuvzAIKSUVZ]) ")
+_NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksouvzAIKSOUVZ]) ")
 
 
 def nbsp_single_letters(text):

@@ -695,6 +695,7 @@ body.nav-open { overflow: hidden; }
 
 /* Program page: "chat about the program" modal — UI shell only, no live
    backend yet. Mirrors the person-modal overlay/transition pattern. */
+html.program-chat-open { overflow: hidden; }
 .program-chat-modal {
   position: fixed;
   inset: 0;
@@ -719,6 +720,10 @@ body.nav-open { overflow: hidden; }
   background: #fff;
   max-width: 560px;
   width: 100%;
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 36px 32px;
   opacity: 0;
   transform: translateY(16px) scale(0.98);
@@ -770,8 +775,6 @@ body.nav-open { overflow: hidden; }
   font-size: 14px;
   line-height: 1.55;
   color: var(--color-ink);
-  max-height: 280px;
-  overflow-y: auto;
   white-space: pre-wrap;
 }
 .program-chat-modal__answer.is-loading { color: rgba(0,0,0,0.4); font-style: italic; }

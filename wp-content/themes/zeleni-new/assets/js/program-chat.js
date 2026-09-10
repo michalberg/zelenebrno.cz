@@ -22,6 +22,7 @@
   function open(fromHash) {
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
+    document.documentElement.classList.add("program-chat-open");
     if (input) input.focus();
     if (!fromHash && location.hash !== "#chat") {
       history.pushState({ zbChat: true }, "", "#chat");
@@ -29,6 +30,7 @@
   }
   function close(fromHash) {
     modal.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("program-chat-open");
     window.setTimeout(function () { modal.hidden = true; }, 300);
     if (!fromHash && location.hash === "#chat") {
       history.pushState(null, "", location.pathname + location.search);

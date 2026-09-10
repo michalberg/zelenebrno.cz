@@ -9,7 +9,7 @@ from pathlib import Path
 from partials import (
     nav_html, footer_html, person_modal_html, head_html, end_scripts_html,
     donate_teaser_html, newsletter_widget_html, coalition_panel_html,
-    ICON_READ, ICON_LISTEN, ICON_ASK,
+    ICON_READ, ICON_LISTEN, ICON_ASK, nbsp_single_letters,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -34,7 +34,7 @@ PILLARS = [
      "text": ("Vysadíme stromy do ulic, doplníme stín a vodní prvky a přestaneme kácet vzrostlé stromy jen "
               "proto, že pod zemí mají přednost kabely. A budeme je zalévat, protože bez toho výsadbu "
               "nepřežijí.")},
-    {"title": "Doprava zdarma", "heading": "Aby šaliny zůstaly důvodem nejet autem",
+    {"title": "Doprava zdarma", "heading": "Aby šaliny byly důvodem nejet autem",
      "photo": "12tramvaje.jpg",
      "text": ("Zavedeme jízdné zdarma pro děti do 15 let, studenty a seniory nad 65 let, přidáme spoje "
               "i klimatizované vozy. V centru nebudeme tramvaje omezovat.")},
@@ -180,7 +180,7 @@ def build():
 
 <div class="max-w-[420px] min-w-0 max-nav:max-w-none max-nav:pt-0 max-nav:text-center">
 <img alt="" class="w-full max-w-[420px] mb-6 max-nav:mx-auto" src="{prefix}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png"/>
-<p class="font-svgd text-white text-[33px] max-md:text-[23px] leading-[1.3] max-w-[440px] max-nav:mx-auto">Dobré město nedělají velká gesta, ale péče o tisíc detailů.</p>
+<p class="font-svgd text-white text-[33px] max-md:text-[23px] leading-[1.3] max-w-[440px] max-nav:mx-auto">{nbsp_single_letters("Dobré město nedělají velká gesta, ale péče o tisíc detailů.")}</p>
 <p class="font-svgd text-green text-[18px] max-md:text-[16px] font-bold mt-4 max-nav:mx-auto">Volte Zelené Brno ve volbách 9. a 10. října.</p>
 </div>
 
