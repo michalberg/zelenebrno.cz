@@ -1,0 +1,26 @@
+name = "zb-program-chat"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Program markdown is bundled as a text module — re-run `npm run sync-program`
+# (or just `npm run deploy`, which does it automatically) after editing
+# site/scripts/data/program_final.md so the worker ships the current text.
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
+
+# KV namespace used to log Q&A pairs and to rate-limit by IP.
+# Create it once with: npx wrangler kv namespace create CHAT_LOG
+# then paste the returned id below.
+[[kv_namespaces]]
+binding = "CHAT_LOG"
+id = "a74e8f19f4b346b9b3ab01b54d58d0bc"
+
+# Secrets (never put these here — set them with `npx wrangler secret put NAME`):
+#   ANTHROPIC_API_KEY  — your Anthropic API key
+#   ADMIN_TOKEN         — a password you invent, used to view logs at /admin/logs
+
+[vars]
+# Comma-separated list of origins allowed to call this worker.
+ALLOWED_ORIGINS = "https://zelenebrno.cz,https://www.zelenebrno.cz,http://localhost:8931"

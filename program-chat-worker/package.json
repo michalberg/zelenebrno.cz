@@ -1,0 +1,14 @@
+{
+  "name": "program-chat-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-program": "cp ../docs/scripts/data/program_final.md src/program.md",
+    "dev": "npm run sync-program && wrangler dev",
+    "deploy": "npm run sync-program && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.130.0"
+  }
+}
