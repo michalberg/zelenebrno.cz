@@ -7,6 +7,8 @@ import re
 
 _NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksouvzAIKSOUVZ]) ")
 
+DEFAULT_OG_IMAGE = "https://www.zelenebrno.cz/wp-content/themes/zeleni-new/assets/img/og/default.jpg"
+
 
 def nbsp_single_letters(text):
     """Czech typographic convention: one-letter words (a, i, k, o/s/u/v/z…)
@@ -161,9 +163,8 @@ def person_modal_html(prefix):
 def head_html(title, description, prefix, canonical_path, og_image=None, full_title=None):
     p = prefix
     full_title = full_title or f"Zelené Brno – {title}"
-    og_image_tag = ""
-    if og_image:
-        og_image_tag = f'<meta property="og:image" content="{og_image}"/>\n'
+    og_image = og_image or DEFAULT_OG_IMAGE
+    og_image_tag = f'<meta property="og:image" content="{og_image}"/>\n'
     return f'''<meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/img/favicon.png" rel="icon" type="image/png"/>

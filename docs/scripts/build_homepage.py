@@ -241,7 +241,7 @@ def build():
 <div class="shadow-card-lg">
 <img alt="Kandidátky a kandidáti Zeleného Brna" class="w-full h-auto aspect-[2048/724] object-cover block" src="{prefix}wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-15-2-e1781014583804.jpg"/>
 </div>
-<p class="text-black/50 text-[13px] mt-3 text-center">Milada Blatná, Jana Drápalová, Jiří Matějovský, Ivana Fajnorová, Natálie Vencovská, Matouš Vencálek, Kristýna Fuchsová, Jasna Flamiková</p>
+<p class="text-black/50 text-[13px] mt-3 text-center">Milada Blatná, Jana Drápalová, Jiří Malenovský, Ivana Fajnorová, Natálie Vencovská, Matouš Vencálek, Kristýna Fuchsová, Jasna Flamiková</p>
 </div>
 </section>
 
@@ -291,7 +291,7 @@ def build():
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!", og_image="https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
+{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!")}
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/donate-form.css" rel="stylesheet"/>
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/newsletter-form.css" rel="stylesheet"/>
 </head>
