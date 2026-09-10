@@ -466,6 +466,395 @@
 ]
 ```
 
+## Kandidátka Žít Zelené Brno pro městskou část Brno-střed (kompletní listina)
+
+```json
+[
+  {
+    "poradi": 1,
+    "jmeno": "Jasna Flamiková",
+    "vek": 57,
+    "povolani": "Zastupitelka města Brna a MČ Brno-střed, ekoložka, koučka",
+    "prislusnost": "Zelení",
+    "titul": "Mgr."
+  },
+  {
+    "poradi": 2,
+    "jmeno": "Kristýna Fuchsová",
+    "vek": 52,
+    "povolani": "Právnička v sociálních službách",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "JUDr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 3,
+    "jmeno": "Petr Kalousek",
+    "vek": 46,
+    "povolani": "Spoluzakladatel festivalu Meeting Brno, hudebník",
+    "prislusnost": "Žít Brno",
+    "titul": "BcA."
+  },
+  {
+    "poradi": 4,
+    "jmeno": "Ivo Skopal",
+    "vek": 37,
+    "povolani": "Spisovatel, auditor",
+    "prislusnost": "Zelení",
+    "titul": "Mgr."
+  },
+  {
+    "poradi": 5,
+    "jmeno": "Gabriela Stögerová",
+    "vek": 47,
+    "povolani": "Památkářka, expertka na veřejnou zeleň",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 6,
+    "jmeno": "Martin Reiner",
+    "vek": 62,
+    "povolani": "Spisovatel, nakladatel",
+    "prislusnost": "Žít Brno"
+  },
+  {
+    "poradi": 7,
+    "jmeno": "Veronika Surá",
+    "vek": 36,
+    "povolani": "Podnikatelka, zahradnice, autorka knih Kvítka v bytě",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 8,
+    "jmeno": "Filip Vaculík",
+    "vek": 38,
+    "povolani": "Krejčí, ředitel Salonu č4",
+    "prislusnost": "Zelení"
+  },
+  {
+    "poradi": 9,
+    "jmeno": "Radim Horák",
+    "vek": 45,
+    "povolani": "Architekt, zastupitel MČ Brno-střed, skaut",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing. arch.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 10,
+    "jmeno": "Natálie Vencovská",
+    "vek": 28,
+    "povolani": "Designérka, odbornice na veřejný prostor",
+    "prislusnost": "Zelení",
+    "titul": "MgA."
+  },
+  {
+    "poradi": 11,
+    "jmeno": "Michal Závodský",
+    "vek": 46,
+    "povolani": "Zaměstnaný advokát, předseda Občanského sdružení Masarykova čtvrť",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "JUDr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 12,
+    "jmeno": "Martin Sobol",
+    "vek": 59,
+    "povolani": "Hudebník, člen orchestru Městského divadla Brno",
+    "prislusnost": "bez politické příslušnosti",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 13,
+    "jmeno": "Yvonna Gaillyová",
+    "vek": 70,
+    "povolani": "Environmentalistka, ředitelka Ekologického institutu Veronica",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "RNDr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 14,
+    "jmeno": "Jindřich Cinka",
+    "vek": 42,
+    "povolani": "Právník, provozovatel deskoheren Před Zrcadlem a Za Zrcadlem",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 15,
+    "jmeno": "František Vémola",
+    "vek": 23,
+    "povolani": "Student",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Bc.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 16,
+    "jmeno": "Klára Kubíčková",
+    "vek": 47,
+    "povolani": "Novinářka, autorka knihy Roztěkané",
+    "prislusnost": "Zelení",
+    "titul": "Bc."
+  },
+  {
+    "poradi": 17,
+    "jmeno": "Marek Hlavička",
+    "vek": 28,
+    "povolani": "Architekt",
+    "prislusnost": "Zelení",
+    "titul": "MgA."
+  },
+  {
+    "poradi": 18,
+    "jmeno": "Vladimír Matoušek",
+    "vek": 70,
+    "povolani": "Sochař",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 19,
+    "jmeno": "David Veselý",
+    "vek": 59,
+    "povolani": "Vodohospodář, projektový manažer",
+    "prislusnost": "Liberálně ekologická strana",
+    "titul": "Ing."
+  },
+  {
+    "poradi": 20,
+    "jmeno": "Anne Meredith Johnson",
+    "vek": 58,
+    "povolani": "Editorka, spoluzakladatelka Czech Theater",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": ", B.A.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 21,
+    "jmeno": "Jan Špaček",
+    "vek": 49,
+    "povolani": "Muzikolog, sbormistr mužského pěveckého sboru Láska opravdivá",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 22,
+    "jmeno": "Kateřina Špácová",
+    "vek": 46,
+    "povolani": "Lektorka angličtiny se specializací na lidská práva",
+    "prislusnost": "Zelení",
+    "titul": "Mgr."
+  },
+  {
+    "poradi": 23,
+    "jmeno": "Adam Zbiejczuk",
+    "vek": 44,
+    "povolani": "Spolumajitel komunikační agentury",
+    "prislusnost": "Zelení",
+    "titul": "Mgr."
+  },
+  {
+    "poradi": 24,
+    "jmeno": "Jan Gerych",
+    "vek": 43,
+    "povolani": "Šéfredaktor archSPACE",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 25,
+    "jmeno": "Viktor Piorecký",
+    "vek": 47,
+    "povolani": "Sociolog",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 26,
+    "jmeno": "Petra Havlíková",
+    "vek": 39,
+    "povolani": "Právní analytička",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr. et Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 27,
+    "jmeno": "Jitka Drápalová",
+    "vek": 39,
+    "povolani": "Marketingová manažerka",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Bc.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 28,
+    "jmeno": "Johana Drlíková",
+    "vek": 36,
+    "povolani": "Environmentalistka na Ústavu výzkumu globální změny AV ČR, předsedkyně ČSOP Morava",
+    "prislusnost": "Zelení",
+    "titul": "Mgr."
+  },
+  {
+    "poradi": 29,
+    "jmeno": "Michal Berg",
+    "vek": 46,
+    "povolani": "Manažer v think-tanku Fakta o klimatu",
+    "prislusnost": "Zelení",
+    "titul": "BcA."
+  },
+  {
+    "poradi": 30,
+    "jmeno": "Petra Amchová",
+    "vek": 40,
+    "povolani": "Vědecko-výzkumná pracovnice a vysokoškolská pedagožka",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 31,
+    "jmeno": "Jan Hollan",
+    "vek": 70,
+    "povolani": "Fyzik, environmentalista",
+    "prislusnost": "Liberálně ekologická strana",
+    "titul": "RNDr."
+  },
+  {
+    "poradi": 32,
+    "jmeno": "Zuzana Sankotová Morávková",
+    "vek": 50,
+    "povolani": "Architektka, edukátorka",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing. arch.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 33,
+    "jmeno": "Tomáš Kalousek",
+    "vek": 20,
+    "povolani": "Student",
+    "prislusnost": "bez politické příslušnosti",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 34,
+    "jmeno": "Hana Kratochvílová",
+    "vek": 37,
+    "povolani": "Copywriterka",
+    "prislusnost": "bez politické příslušnosti",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 35,
+    "jmeno": "Benjamín Skála",
+    "vek": 42,
+    "povolani": "Administrativní pracovník ve školství, fotograf, wikipedista",
+    "prislusnost": "Zelení",
+    "titul": "Bc."
+  },
+  {
+    "poradi": 36,
+    "jmeno": "Margita Janušová",
+    "vek": 67,
+    "povolani": "Chůva v dětské skupině",
+    "prislusnost": "bez politické příslušnosti",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 37,
+    "jmeno": "Václav Němčík",
+    "vek": 46,
+    "povolani": "Programátor",
+    "prislusnost": "Zelení"
+  },
+  {
+    "poradi": 38,
+    "jmeno": "Klára Dutkiewič",
+    "vek": 38,
+    "povolani": "Majitelka kavárny Punkt",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 39,
+    "jmeno": "Barbora Szczygielová",
+    "vek": 60,
+    "povolani": "Referentka stavebního úřadu",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing. arch.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 40,
+    "jmeno": "Pavla Martinková",
+    "vek": 36,
+    "povolani": "Knihovnice",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 41,
+    "jmeno": "Michal Konečný",
+    "vek": 51,
+    "povolani": "IT manažer",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 42,
+    "jmeno": "Karel Kubza",
+    "vek": 42,
+    "povolani": "Architekt",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing. arch.",
+    "navrhuje": "navrhuje Žít Brno"
+  },
+  {
+    "poradi": 43,
+    "jmeno": "Lukáš Kala",
+    "vek": 43,
+    "povolani": "Vedoucí zahraničního oddělení MENDELU, sociolog",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 44,
+    "jmeno": "Eliška Nazarová Marvanová",
+    "vek": 43,
+    "povolani": "Koordinátorka fundraisingu, environmentalistka",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Mgr.",
+    "navrhuje": "navrhují Zelení"
+  },
+  {
+    "poradi": 45,
+    "jmeno": "Dana Kalousková",
+    "vek": 72,
+    "povolani": "Důchodkyně",
+    "prislusnost": "bez politické příslušnosti",
+    "titul": "Ing.",
+    "navrhuje": "navrhuje Žít Brno"
+  }
+]
+```
+
 ## Městské části, kde kandidujeme
 
 ```json
@@ -555,184 +944,4 @@
     }
   ]
 }
-```
-
-## Procházky s kandidáty a kandidátkami po Brně
-
-Každá procházka má datum, čas, místo a téma. Datum je ve formátu RRRR-MM-DD.
-
-```json
-[
-  {
-    "date": "2026-09-03",
-    "time": "17:30",
-    "title": "O náplavce a řekách",
-    "desc": "Jak Brno řeší povodně, novou divočinu na náplavce i to, co se skrývá pod hladinou Svratky.",
-    "place": "u haly Rondo",
-    "people": "D. Veselý, J. Flamiková",
-    "url": "https://fb.me/e/68TECijw4"
-  },
-  {
-    "date": "2026-09-04",
-    "time": "17:00",
-    "title": "Zelené balkony",
-    "desc": "Tipy, jak i malý balkon proměnit v místo, které prospívá vám i městské přírodě.",
-    "place": "před Nejvyšším soudem, Burešova 20",
-    "people": "V. Surá",
-    "url": "https://fb.me/e/8rliN8joK"
-  },
-  {
-    "date": "2026-09-08",
-    "time": "17:30",
-    "title": "Jak se dělá dobrá ulice?",
-    "desc": "Stromy, chodníky, přechody i parkování, co dělá z ulice místo, kde se dobře žije.",
-    "place": "zastávka Obilní trh",
-    "people": "J. Flamiková",
-    "url": "https://fb.me/e/6kABJZH0g"
-  },
-  {
-    "date": "2026-09-09",
-    "time": "17:30",
-    "title": "Bude nám horko z horkovodu?",
-    "desc": "Horkovod z Dukovan, obnovitelné zdroje a cesta k soběstačné brněnské energetice.",
-    "place": "Moravské náměstí u jezírka",
-    "people": "M. Ander",
-    "url": "https://fb.me/e/6dIbhWYFg"
-  },
-  {
-    "date": "2026-09-10",
-    "time": "18:00",
-    "title": "Jak se kradly byty",
-    "desc": "Historie i současnost bytové politiky na Brně-střed a cesta k transparentnímu bydlení.",
-    "place": "dvůr radnice Brno-střed",
-    "people": "K. Fuchsová, D. Oplatek",
-    "url": "https://fb.me/e/7Bt78MrsK"
-  },
-  {
-    "date": "2026-09-10",
-    "time": "17:30",
-    "title": "Projděme se Komínem",
-    "desc": "Komínské louky, molo u řeky i rekonstrukce Staré hasičky na komunitní centrum.",
-    "place": "u Sokolovny (zast. Svratecká)",
-    "people": "M. Blatná",
-    "url": "https://fb.me/e/74MbsUoU2"
-  },
-  {
-    "date": "2026-09-15",
-    "time": "17:30",
-    "title": "Procházka Kamenkou",
-    "desc": "Stoletá dělnická kolonie v bývalém lomu a výzvy jejího dalšího rozvoje.",
-    "place": "u Duck baru v Kamence",
-    "people": "R. Horák",
-    "url": "https://fb.me/e/4VRc1nXDq"
-  },
-  {
-    "date": "2026-09-15",
-    "time": "17:00",
-    "title": "Péče o zeleň v extrémních podmínkách Kamenného vrchu",
-    "desc": "Jak Nový Lískovec zvládá horko a sucho, jezírko na dešťovku, zelené střechy i solární panely.",
-    "place": "komunitní centrum Skála, Oblá 505/54a",
-    "people": "J. Drápalová, M. Vlašín, P. Forchtgott",
-    "url": "https://fb.me/e/724WnEDsp"
-  },
-  {
-    "date": "2026-09-16",
-    "time": "17:00",
-    "title": "Muraly v Bronxu",
-    "desc": "Dvanáct velkoplošných maleb, jejich příběhy a proměna veřejného prostoru.",
-    "place": "Cejl 28",
-    "people": "M. Reiner, N. Vencovská",
-    "url": "https://fb.me/e/6jUV0WbV9"
-  },
-  {
-    "date": "2026-09-17",
-    "time": "17:30",
-    "title": "Život s řekou",
-    "desc": "Svratka jako zdroj obživy i zábavy Jundrova od 19. století do současnosti.",
-    "place": "pláž Prašnice",
-    "people": "I. Fajnorová",
-    "url": "https://fb.me/e/6VSFbYA7Y"
-  },
-  {
-    "date": "2026-09-18",
-    "time": "17:30",
-    "title": "Vzpomínáme na devadesátky",
-    "desc": "Nezávislá kultura a aktivismus v Brně v době bez mobilů a internetu.",
-    "place": "před klubem Mersey, Minská 15",
-    "people": "Jiřina, K. Fuchsová",
-    "url": "https://fb.me/e/8iZjXpXMq"
-  },
-  {
-    "date": "2026-09-19",
-    "time": "10:00",
-    "title": "Běh kolem Svitavy a Svratky",
-    "desc": "Společný běh podél řek, kdo chce, může si přidat i pár otázek pro kandidáty.",
-    "place": "ul. Gargulákova, most přes Svitavu",
-    "people": "I. Skopal, K. Fuchsová",
-    "url": "https://fb.me/e/52y5Brwy2"
-  },
-  {
-    "date": "2026-09-22",
-    "time": "17:30",
-    "title": "Komín, jak ho možná neznáte",
-    "desc": "Druhá šance projít si Komín po stejné trase.",
-    "place": "u Sokolovny (zast. Svratecká)",
-    "people": "M. Blatná",
-    "url": "https://fb.me/e/7sQiq2CME"
-  },
-  {
-    "date": "2026-09-23",
-    "time": "17:00",
-    "title": "Literární Brno",
-    "desc": "Po stopách Ivana Blatného, Milana Kundery i dalších osobností brněnské literatury.",
-    "place": "Obilní trh 4",
-    "people": "M. Reiner",
-    "url": "https://fb.me/e/eeTn36Ihk"
-  },
-  {
-    "date": "2026-09-24",
-    "time": "18:00",
-    "title": "Mýty a realita brněnského Bronxu",
-    "desc": "Historie i budoucnost čtvrti tak, aby rozvoj neznamenal vytlačování místních obyvatel.",
-    "place": "před Divadlem Radost, Bratislavská",
-    "people": "K. Fuchsová, D. Oplatek",
-    "url": "https://fb.me/e/6Nomooge5"
-  },
-  {
-    "date": "2026-09-29",
-    "time": "17:00",
-    "title": "Jak vrátit život městským potokům a proč na tom záleží?",
-    "desc": "Podél potoka Vrbovce k tomu, co udělá s krajinou narovnané betonové koryto a jak vodě vrátit život.",
-    "place": "lávka přes Svratku u zast. Kamenolom",
-    "people": "M. Vencálek, P. Pařil",
-    "url": "https://fb.me/e/4hncOuIOp"
-  },
-  {
-    "date": "2026-09-30",
-    "time": "17:30",
-    "title": "Za architekturou židenické Smuteční síně",
-    "desc": "Obdivujte výtvarná díla i promyšlenou architekturu nově opravované síně.",
-    "place": "Smuteční síň v Židenicích",
-    "people": "P. Kunc",
-    "url": "https://fb.me/e/duxVz2mNz"
-  },
-  {
-    "date": "2026-10-01",
-    "time": "17:00",
-    "title": "Podnikání v Brně",
-    "desc": "Jak podpořit drobné živnostníky a udržitelné podnikání ve městě.",
-    "place": "Punkt, Starobrněnská 16",
-    "people": "K. Dutkiewič, J. Malenovský",
-    "url": "https://fb.me/e/6j4dfIHJP"
-  },
-  {
-    "date": "2026-10-03",
-    "time": "9:00",
-    "title": "Procházka pro klidnější mysl",
-    "desc": "Jak nám příroda, chůze a vědomá pozornost pomáhají zvládat každodenní stres.",
-    "place": "u Ponavy v Lužánkách",
-    "people": "J. Flamiková",
-    "url": "https://fb.me/e/4X6vMbA9v"
-  }
-]
 ```

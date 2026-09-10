@@ -1,7 +1,8 @@
 node_modules/
 .wrangler/
-# Copied from ../docs/scripts/data/*.md by `npm run sync-program` (part of
-# `dev`/`deploy`) — those files are the source of truth, not these copies.
+# Copied in by `npm run sync-program` (part of `dev`/`deploy`) — the
+# originals under ../docs/ are the source of truth, not these copies.
 src/program.md
 src/appendix.md
+src/prochazky.json
 .DS_Store

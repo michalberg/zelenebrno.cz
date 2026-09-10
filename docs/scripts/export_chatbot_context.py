@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Export kandidátka, městské části, and procházky as JSON appended to the
-program text fed to the /program chatbot (program-chat-worker), so it can
-answer questions about candidates, district candidacies, and upcoming walks.
-Run from `site/docs/`: python3 scripts/export_chatbot_context.py
+"""Export kandidátka and městské části as JSON appended to the program text
+fed to the /program chatbot (program-chat-worker), so it can answer
+questions about candidates and district candidacies. Run from `site/docs/`:
+python3 scripts/export_chatbot_context.py
 
-Regenerate this whenever kandidatka/, mestske-casti/, or prochazky.json
-change — it's a snapshot, not read live.
+Regenerate this whenever kandidatka/, kandidatka-brno-stred/, or
+mestske-casti/ change — it's a snapshot, not read live.
+
+Procházky are handled separately: program-chat-worker/src/index.js imports
+prochazky.json directly and filters "upcoming" in code at request time,
+rather than embedding the full list here for the model to date-compare
+itself (that was unreliable — see the worker's git history).
 """
 import json
 import re
@@ -14,9 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 
-def extract_kandidatka():
-    html = (ROOT / "kandidatka/index.html").read_text(encoding="utf-8")
-    start = html.index('<table id="zb-tabulka">')
+def extract_candidate_table(html):
+    start = html.index("<table")
     end = html.index("</table>", start)
     table_html = html[start:end]
     rows = re.findall(r"<tr>(.*?)</tr>", table_html, re.S)
@@ -55,6 +59,16 @@ def extract_kandidatka():
             entry["navrhuje"] = navrhuje
         candidates.append(entry)
     return candidates
+
+
+def extract_kandidatka():
+    html = (ROOT / "kandidatka/index.html").read_text(encoding="utf-8")
+    return extract_candidate_table(html)
+
+
+def extract_kandidatka_brno_stred():
+    html = (ROOT / "kandidatka-brno-stred/index.html").read_text(encoding="utf-8")
+    return extract_candidate_table(html)
 
 
 def extract_mestske_casti():
@@ -108,15 +122,10 @@ def extract_mestske_casti():
     return {"vedeme_radnici": vedeme_radnici, "brno_stred": brno_stred, "dalsi_kandidatky": dalsi}
 
 
-def extract_prochazky():
-    data = json.loads((ROOT / "wp-content/themes/zeleni-new/assets/data/prochazky.json").read_text(encoding="utf-8"))
-    return data
-
-
 def build():
     kandidatka = extract_kandidatka()
+    kandidatka_brno_stred = extract_kandidatka_brno_stred()
     mestske_casti = extract_mestske_casti()
-    prochazky = extract_prochazky()
 
     out = f"""## Kandidátka Zelené Brno (kompletní kandidátní listina pro volby do Zastupitelstva města Brna)
 
@@ -124,25 +133,27 @@ def build():
 {json.dumps(kandidatka, ensure_ascii=False, indent=2)}
 ```
 
+## Kandidátka Žít Zelené Brno pro městskou část Brno-střed (kompletní listina)
+
+```json
+{json.dumps(kandidatka_brno_stred, ensure_ascii=False, indent=2)}
+```
+
 ## Městské části, kde kandidujeme
 
 ```json
 {json.dumps(mestske_casti, ensure_ascii=False, indent=2)}
 ```
-
-## Procházky s kandidáty a kandidátkami po Brně
-
-Každá procházka má datum, čas, místo a téma. Datum je ve formátu RRRR-MM-DD.
-
-```json
-{json.dumps(prochazky, ensure_ascii=False, indent=2)}
-```
 """
     out_path = ROOT / "scripts/data/chatbot_appendix.md"
     out_path.write_text(out, encoding="utf-8")
-    print(f"wrote {out_path} ({len(kandidatka)} kandidátů/kandidátek, "
-          f"{len(mestske_casti['vedeme_radnici']) + len(mestske_casti['dalsi_kandidatky']) + 1} městských částí, "
-          f"{len(prochazky)} procházek)")
+    # Procházky are NOT embedded here — program-chat-worker/src/index.js
+    # imports prochazky.json directly and filters "upcoming" in code at
+    # request time (date comparison across 19 entries buried in a huge
+    # prompt was unreliable for the model to do itself; see commit message).
+    print(f"wrote {out_path} ({len(kandidatka)} kandidátů/kandidátek na hlavní kandidátce, "
+          f"{len(kandidatka_brno_stred)} na kandidátce Brno-střed, "
+          f"{len(mestske_casti['vedeme_radnici']) + len(mestske_casti['dalsi_kandidatky']) + 1} městských částí)")
 
 
 if __name__ == "__main__":
