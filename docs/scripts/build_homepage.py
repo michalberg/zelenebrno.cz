@@ -291,7 +291,7 @@ def build():
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!", og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
+{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!", og_image="https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/donate-form.css" rel="stylesheet"/>
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/newsletter-form.css" rel="stylesheet"/>
 </head>

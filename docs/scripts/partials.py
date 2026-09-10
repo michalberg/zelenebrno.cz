@@ -173,12 +173,12 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
 <title>{full_title}</title>
 <meta content="max-image-preview:large" name="robots"/>
 <meta name="description" content="{description}"/>
-<link rel="canonical" href="https://zelenebrno.cz{canonical_path}"/>
+<link rel="canonical" href="https://www.zelenebrno.cz{canonical_path}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Zelené Brno"/>
 <meta property="og:title" content="{full_title}"/>
 <meta property="og:description" content="{description}"/>
-<meta property="og:url" content="https://zelenebrno.cz{canonical_path}"/>
+<meta property="og:url" content="https://www.zelenebrno.cz{canonical_path}"/>
 {og_image_tag}<meta name="twitter:card" content="summary_large_image"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>

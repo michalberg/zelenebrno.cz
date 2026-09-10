@@ -27,7 +27,7 @@ def build():
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Darujte", DESCRIPTION, prefix, "/darujte/", og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
+{head_html("Darujte", DESCRIPTION, prefix, "/darujte/", og_image="https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/donate-form.css" rel="stylesheet"/>
 </head>
 <body class="wp-singular page-template page-darujte wp-embed-responsive wp-theme-zeleni-new font-sans bg-paper text-ink antialiased min-h-screen flex flex-col tribe-no-js">

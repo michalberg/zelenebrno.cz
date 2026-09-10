@@ -239,7 +239,7 @@ def build_index(intro, chapters):
         canonical_path="/program/",
         body_class="wp-singular page-template page-program",
         main_html=main_html,
-        og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/01bydleni.jpg",
+        og_image="https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/01bydleni.jpg",
         extra_body=program_chat_modal_html(),
         extra_scripts=f'<script src="{prefix}wp-content/themes/zeleni-new/assets/js/program-chat.js"></script>',
     )
@@ -435,7 +435,7 @@ def build_chapter(chapters, i):
 
     photo = CHAPTER_PHOTOS.get(ch["slug"])
     og_image = (
-        f"https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/{photo}"
+        f"https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/{photo}"
         if photo else None
     )
 

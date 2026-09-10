@@ -87,7 +87,7 @@ def build():
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Natálie Vencovská", DESCRIPTION, prefix, "/natalie-vencovska/", og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
+{head_html("Natálie Vencovská", DESCRIPTION, prefix, "/natalie-vencovska/", og_image="https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
 </head>
 <body class="wp-singular page-template font-sans bg-paper text-ink antialiased min-h-screen flex flex-col tribe-no-js">
 {nav_html(prefix)}

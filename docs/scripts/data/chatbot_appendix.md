@@ -894,7 +894,7 @@
   "brno_stred": {
     "mestska_cast": "Brno-střed",
     "kandidatka": "Žít Zelené Brno — kompletní kandidátní listina",
-    "url": "https://zelenebrno.cz/kandidatka-brno-stred/"
+    "url": "https://www.zelenebrno.cz/kandidatka-brno-stred/"
   },
   "dalsi_kandidatky": [
     {

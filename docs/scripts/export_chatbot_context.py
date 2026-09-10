@@ -98,7 +98,7 @@ def extract_mestske_casti():
     if featured_m:
         url = featured_m.group(1)
         if url.startswith(".."):
-            url = "https://zelenebrno.cz/" + url.lstrip("./")
+            url = "https://www.zelenebrno.cz/" + url.lstrip("./")
         brno_stred = {
             "mestska_cast": featured_m.group(2).rstrip(":"),
             "kandidatka": featured_m.group(3).strip(),

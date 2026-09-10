@@ -90,12 +90,12 @@ def patch_file(rel_path, description, add_closing_cta):
         full_title = title_match.group(1) if title_match else "Zelené Brno"
         meta_block = (
             f'<meta name="description" content="{description}"/>\n'
-            f'<link rel="canonical" href="https://zelenebrno.cz{canonical_path}"/>\n'
+            f'<link rel="canonical" href="https://www.zelenebrno.cz{canonical_path}"/>\n'
             f'<meta property="og:type" content="website"/>\n'
             f'<meta property="og:site_name" content="Zelené Brno"/>\n'
             f'<meta property="og:title" content="{full_title}"/>\n'
             f'<meta property="og:description" content="{description}"/>\n'
-            f'<meta property="og:url" content="https://zelenebrno.cz{canonical_path}"/>\n'
+            f'<meta property="og:url" content="https://www.zelenebrno.cz{canonical_path}"/>\n'
             f'<meta name="twitter:card" content="summary_large_image"/>\n'
         )
         html, n = re.subn(
