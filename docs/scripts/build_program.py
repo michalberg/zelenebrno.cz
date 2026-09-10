@@ -239,6 +239,7 @@ def build_index(intro, chapters):
         canonical_path="/program/",
         body_class="wp-singular page-template page-program",
         main_html=main_html,
+        og_image="https://www.zelenebrno.cz/wp-content/themes/zeleni-new/assets/img/og/program.jpg",
         extra_body=program_chat_modal_html(),
         extra_scripts=f'<script src="{prefix}wp-content/themes/zeleni-new/assets/js/program-chat.js"></script>',
     )
