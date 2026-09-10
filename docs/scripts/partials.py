@@ -166,6 +166,7 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
     og_image = og_image or DEFAULT_OG_IMAGE
     og_image_tag = f'<meta property="og:image" content="{og_image}"/>\n'
     return f'''<meta charset="utf-8"/>
+<meta name="google-site-verification" content="IGELgJMqcE2QoQsiaqV5rAu-IxOxvmvM0IZhrtOPLPk"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/img/favicon.png" rel="icon" type="image/png"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
