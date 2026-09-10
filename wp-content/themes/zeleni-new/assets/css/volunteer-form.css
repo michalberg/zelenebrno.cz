@@ -1,0 +1,49 @@
+/* Inline volunteer sign-up form on /zapoj-se — posts to the same Action
+   Network form as newsletter-form.js and natalievencovska.cz's volunteer
+   form, with the extra question fields the real embed at
+   actionnetwork.org/forms/kampan-brno/ collects. */
+.zb-volunteer { max-width: 640px; margin-top: 24px; }
+.zb-volunteer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.zb-volunteer-field { margin-bottom: 16px; }
+.zb-volunteer-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #000; }
+.zb-volunteer-hint { display: block; font-weight: 400; font-size: 13px; line-height: 1.4; color: rgba(0,0,0,0.55); margin-top: 2px; }
+.zb-volunteer input[type="text"],
+.zb-volunteer input[type="email"],
+.zb-volunteer input[type="tel"],
+.zb-volunteer textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 4px;
+  border: 2px solid #ddeee2;
+  font-size: 15px;
+  font-family: 'Archivo', sans-serif;
+  outline: none;
+  color: #000;
+  background: #fff;
+  transition: border-color .15s ease;
+}
+.zb-volunteer textarea { min-height: 90px; resize: vertical; font-family: inherit; }
+.zb-volunteer input:focus, .zb-volunteer textarea:focus { border-color: var(--color-green); }
+.zb-volunteer-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(0,0,0,0.6);
+  margin: 4px 0 18px;
+}
+.zb-volunteer-consent input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--color-green);
+  width: 16px;
+  height: 16px;
+}
+.zb-volunteer-error { display: none; font-size: 13px; color: #d3273e; margin-bottom: 12px; }
+.zb-volunteer-error.is-visible { display: block; }
+.zb-volunteer-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.zb-volunteer-success { font-size: 17px; font-weight: 700; color: #06A856; }
+@media (max-width: 640px) {
+  .zb-volunteer-grid { grid-template-columns: 1fr; }
+}

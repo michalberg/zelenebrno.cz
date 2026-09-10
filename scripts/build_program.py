@@ -11,7 +11,7 @@ from parse_program import parse
 from partials import (
     nav_html, footer_html, closing_cta_html, person_modal_html,
     head_html, end_scripts_html, ICON_READ, ICON_LISTEN, ICON_ASK,
-    newsletter_widget_html,
+    newsletter_widget_html, nbsp_single_letters,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -26,11 +26,11 @@ def meta_description(text, limit=155):
     return cut + "…"
 
 
-def page_shell(*, title, description, prefix, canonical_path, body_class, main_html, extra_body="", extra_scripts="", extra_head=""):
+def page_shell(*, title, description, prefix, canonical_path, body_class, main_html, extra_body="", extra_scripts="", extra_head="", og_image=None):
     return f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html(title, description, prefix, canonical_path)}
+{head_html(title, description, prefix, canonical_path, og_image=og_image)}
 {extra_head}
 </head>
 <body class="{body_class} wp-embed-responsive wp-theme-zeleni-new font-sans bg-paper text-ink antialiased min-h-screen flex flex-col tribe-no-js">
@@ -53,8 +53,13 @@ CHAPTER_PHOTOS = {
     "bezpecna-doprava": "04mobilita.jpg",
     "zelen-voda-a-stin-ve-meste": "02lavicka.jpg",
     "skoly-deti-rodiny-a-sport": "03vzdelani.jpg",
-    "kultura-a-komunitni-zivot": "05kultura.jpg",
+    "kultura-a-komunitni-zivot": "11kulturabalon.jpg",
     "otevrena-radnice-a-dobre-hospodareni": "06komunita.jpg",
+    "verejny-prostor-pro-lidi": "07verejnyprostor.jpg",
+    "energie-odpady-a-ciste-mesto": "08energie.jpg",
+    "pece-o-seniory-a-lidi-v-nouzi": "09seniori.jpg",
+    "zdravi-bezpeci-a-krizova-pripravenost": "10nemocnice.jpg",
+    "mistni-ekonomika-a-zive-centrum": "11zivecentrum.jpg",
 }
 
 PLACEHOLDER_ICON = '''<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-4-4 3-3-2-6 5"/></svg>'''
@@ -75,7 +80,7 @@ def chapter_card_html(prefix, ch):
     return f'''<a class="group block bg-white shadow-card p-8 max-md:p-6 flex flex-col" href="{prefix}program/{ch['slug']}/">
 {media}
 <span class="font-name text-green-deep font-black text-[15px] tracking-[0.1em] mb-3">{num}</span>
-<h3 class="font-display text-ink font-black text-[24px] uppercase leading-[1.12] tracking-tight">{ch['title']}</h3>
+<h3 class="font-display text-ink font-black text-[24px] uppercase leading-[1.12] tracking-tight">{nbsp_single_letters(ch['title'])}</h3>
 </a>'''
 
 
@@ -83,32 +88,29 @@ def program_formats_html(prefix):
     base = f"{prefix}wp-content/uploads/sites/123/2026/09/program"
     return f'''<section class="bg-[#f4faf6] py-10 px-14 max-md:py-8 max-md:px-5">
 <div class="mx-auto max-w-[1040px]">
-<div class="grid grid-cols-3 gap-4 max-nav:grid-cols-1">
-<div class="bg-white shadow-card p-4">
-<div class="flex items-center gap-2 mb-3">
-<span class="w-4 h-4 block shrink-0 text-green-deep">{ICON_READ}</span>
-<p class="font-display text-ink font-black text-[13px] uppercase tracking-tight leading-[1.2]">Přečtěte si program</p>
+<div class="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+<div class="bg-white shadow-card p-5">
+<div class="flex items-center gap-2.5 mb-2">
+<span class="w-5 h-5 block shrink-0 text-green-deep">{ICON_ASK}</span>
+<p class="font-display text-ink font-black text-[17px] uppercase tracking-tight leading-[1.2]">Chatujte s chatbotem o programu</p>
 </div>
-<div class="flex flex-col gap-1.5">
-<a class="btn btn-md btn-green" href="{base}/brno-do-detailu.pdf" download>Stáhnout jako PDF</a>
-<a class="btn btn-md btn-outline" href="{base}/brno-do-detailu.epub" download>Stáhnout jako eBook (.epub)</a>
-</div>
-</div>
-<div class="bg-white shadow-card p-4">
-<div class="flex items-center gap-2 mb-3">
-<span class="w-4 h-4 block shrink-0 text-green-deep">{ICON_ASK}</span>
-<p class="font-display text-ink font-black text-[13px] uppercase tracking-tight leading-[1.2]">Chatujte s chatbotem o programu</p>
-</div>
+<p class="text-[17px] text-black/60 leading-[1.5] mb-3">Program má 256 konkrétních opatření. Chatbot vám pomůže najít odpověď na to, co vás zajímá.</p>
 <button type="button" class="btn btn-md btn-pink w-full" data-open-program-chat>Otevřít chat</button>
 </div>
-<div class="bg-white shadow-card p-4">
-<div class="flex items-center gap-2 mb-3">
-<span class="w-4 h-4 block shrink-0 text-green-deep">{ICON_LISTEN}</span>
-<p class="font-display text-ink font-black text-[13px] uppercase tracking-tight leading-[1.2]">Poslechněte si program jako podcast</p>
+<div class="bg-white shadow-card p-5 scroll-mt-32" id="podcast">
+<div class="flex items-center gap-2.5 mb-2">
+<span class="w-5 h-5 block shrink-0 text-green-deep">{ICON_LISTEN}</span>
+<p class="font-display text-ink font-black text-[17px] uppercase tracking-tight leading-[1.2]">Poslechněte si program jako podcast</p>
 </div>
+<p class="text-[17px] text-black/60 leading-[1.5] mb-3">Nechce se vám program číst? Poslechněte si o něm podcast.</p>
 <iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/2iODjU1CXFGEv87HUgcVIH?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 </div>
+<p class="text-center text-[15px] font-bold mt-4">
+<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.pdf" download>Stáhnout jako PDF</a>
+<span class="mx-2 text-black/30">·</span>
+<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.epub" download>Stáhnout jako eBook (.epub)</a>
+</p>
 </div>
 </section>'''
 
@@ -210,7 +212,7 @@ def build_index(intro, chapters):
     cards = "\n".join(chapter_card_html(prefix, ch) for ch in chapters)
     intro_desc = meta_description(intro["paragraphs_raw"][0])
     main_html = f'''<section class="bg-white pt-20 pb-12 px-14 max-md:pt-12 max-md:pb-8 max-md:px-5">
-<div class="mx-auto max-w-[800px]">
+<div class="mx-auto max-w-[1040px]">
 <h1 class="font-display text-ink font-black text-[56px] max-md:text-4xl uppercase tracking-tight leading-[1.1] mb-4">{intro['title']}</h1>
 <p class="text-black/70 font-svgd font-bold text-[15px] uppercase tracking-[0.12em] mb-6">Volební program koalice Zelené Brno pro komunální volby 2026</p>
 <h2 class="font-svgd text-[24px] max-md:text-xl leading-[1.35] text-ink">{intro['subtitle']}.</h2>
@@ -237,6 +239,7 @@ def build_index(intro, chapters):
         canonical_path="/program/",
         body_class="wp-singular page-template page-program",
         main_html=main_html,
+        og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/01bydleni.jpg",
         extra_body=program_chat_modal_html(),
         extra_scripts=f'<script src="{prefix}wp-content/themes/zeleni-new/assets/js/program-chat.js"></script>',
     )
@@ -309,7 +312,7 @@ BYDLENI_GUIDE_AN_URL = "https://actionnetwork.org/api/v2/forms/da64edd7-46a2-44c
 
 def prazdne_byty_block(prefix):
     form = newsletter_widget_html(
-        "web-bydleni", "", submit_label="Poslat mi příručku", variant="light",
+        "web-bydleni-clanek", "", submit_label="Poslat mi příručku", variant="light",
         consent_text=BYDLENI_GUIDE_CONSENT, an_url=BYDLENI_GUIDE_AN_URL, autoresponse=True,
     )
     return f'''<div class="bg-pink text-ink flex items-stretch gap-8 max-md:flex-col mb-10">
@@ -336,6 +339,14 @@ CHAPTER_EPISODES = {
     10: "60V5hw77kTh3SpbdcAaEw8",
     11: "6cewsfCHAZBtw36RoXrGZi",
 }
+
+
+def chapter_header_html(prefix, ch):
+    return f'''<div class="mb-10">
+<p class="font-name text-green-deep font-black text-[15px] tracking-[0.1em] mb-3">Kapitola {ch['num']:02d}</p>
+<h1 class="font-display text-ink font-black text-[48px] max-md:text-4xl uppercase tracking-tight leading-[1.08] mb-5">{nbsp_single_letters(ch['title'])}</h1>
+<p class="font-svgd text-[20px] max-md:text-lg leading-[1.4] text-ink">{ch['lede']}</p>
+</div>'''
 
 
 def chapter_listen_ask_html(ch):
@@ -386,9 +397,7 @@ def build_chapter(chapters, i):
 <nav class="text-[13px] font-bold text-black/45 mb-6" aria-label="Drobečková navigace">
 <a class="hover:text-green transition" href="{prefix}">Domů</a> <span class="mx-1">/</span> <a class="hover:text-green transition" href="{prefix}program/">Program</a> <span class="mx-1">/</span> <span class="text-black/70">{ch['title']}</span>
 </nav>
-<p class="font-name text-green-deep font-black text-[15px] tracking-[0.1em] mb-3">Kapitola {ch['num']:02d}</p>
-<h1 class="font-display text-ink font-black text-[48px] max-md:text-4xl uppercase tracking-tight leading-[1.08] mb-5">{ch['title']}</h1>
-<p class="font-svgd text-[20px] max-md:text-lg leading-[1.4] text-ink mb-10">{ch['lede']}</p>
+{chapter_header_html(prefix, ch)}
 
 {chapter_listen_ask_html(ch)}
 
@@ -424,6 +433,12 @@ def build_chapter(chapters, i):
 </section>
 {closing_cta_html(prefix)}'''
 
+    photo = CHAPTER_PHOTOS.get(ch["slug"])
+    og_image = (
+        f"https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/temata/{photo}"
+        if photo else None
+    )
+
     extra_scripts = f'<script src="{prefix}wp-content/themes/zeleni-new/assets/js/program-chat.js"></script>'
     extra_head = ""
     if ch["num"] == 1:
@@ -440,6 +455,7 @@ def build_chapter(chapters, i):
         extra_body=program_chat_modal_html(CHAPTER_CHAT_QUESTIONS.get(ch["num"])),
         extra_scripts=extra_scripts,
         extra_head=extra_head,
+        og_image=og_image,
     )
     out_dir = ROOT / "program" / ch["slug"]
     out_dir.mkdir(parents=True, exist_ok=True)

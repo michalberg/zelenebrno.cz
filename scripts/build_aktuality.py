@@ -48,7 +48,7 @@ def build():
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Aktuality", DESCRIPTION, prefix, "/aktuality/")}
+{head_html("Aktuality", DESCRIPTION, prefix, "/aktuality/", og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-12-1024x683.jpg")}
 </head>
 <body class="wp-singular page-template page-aktuality wp-embed-responsive wp-theme-zeleni-new font-sans bg-paper text-ink antialiased min-h-screen flex flex-col tribe-no-js">
 {nav_html(prefix)}

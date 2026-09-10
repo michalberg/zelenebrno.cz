@@ -3,6 +3,16 @@
 generator/patch script in this folder. `prefix` is the relative path back to
 the site root: "" at depth 0, "../" at depth 1, "../../" at depth 2, etc.
 """
+import re
+
+_NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksuvzAIKSUVZ]) ")
+
+
+def nbsp_single_letters(text):
+    """Czech typographic convention: one-letter words (a, i, k, o/s/u/v/z…)
+    must never dangle at the end of a line, so glue them to the next word."""
+    return _NBSP_SINGLE_LETTER.sub(r"\1&nbsp;", text)
+
 
 ICON_READ = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.5-1 5.5-1 8 0v13c-2.5-1-5.5-1-8 0z"/><path d="M12 5.5c2.5-1 5.5-1 8 0v13c-2.5-1-5.5-1-8 0z"/></svg>'
 ICON_LISTEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2" y="13" width="5" height="7" rx="1.5"/><rect x="17" y="13" width="5" height="7" rx="1.5"/></svg>'
@@ -150,7 +160,7 @@ def person_modal_html(prefix):
 
 def head_html(title, description, prefix, canonical_path, og_image=None, full_title=None):
     p = prefix
-    full_title = full_title or f"{title} – Zelené Brno"
+    full_title = full_title or f"Zelené Brno – {title}"
     og_image_tag = ""
     if og_image:
         og_image_tag = f'<meta property="og:image" content="{og_image}"/>\n'
@@ -172,7 +182,8 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
 {og_image_tag}<meta name="twitter:card" content="summary_large_image"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>
-<meta content="WordPress 7.1" name="generator"/>'''
+<meta content="WordPress 7.1" name="generator"/>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="12e306b8-b908-43ac-8c54-5de37b73809c"></script>'''
 
 
 def end_scripts_html(prefix, donate=False):

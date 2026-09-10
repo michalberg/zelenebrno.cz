@@ -2,14 +2,15 @@
    Builds its own markup and injects it before </body> on every page, so no
    page template needs to carry it by hand. Reuses the same Action Network
    submission pattern as prazdnebytybrno.cz (public form endpoint, honeypot,
-   consent checkbox), tagged "web-bydleni" per the campaign's tagging table. */
+   consent checkbox), tagged "web-bydleni-popup" to distinguish it from the
+   inline sign-up on the /program bydlení chapter. */
 (function () {
   "use strict";
 
   var CONFIG = {
     anSubmissionUrl:
       "https://actionnetwork.org/api/v2/forms/da64edd7-46a2-44c0-9b5e-3e9b9a8e3f9d/submissions/",
-    tag: "web-bydleni",
+    tag: "web-bydleni-popup",
     avatarSrc: "/wp-content/uploads/sites/123/2026/09/kristyna-fuchsova.jpg",
   };
 
@@ -39,8 +40,8 @@
     wrap.setAttribute("data-zbw", "");
     wrap.innerHTML =
       '<div class="zbw-pill-wrap">' +
-        '<button type="button" class="zbw-pill" data-zbw-open aria-label="Otevřít: Brno má 1592 prázdných městských bytů. Proč?">' +
-          '<span class="zbw-pill__text">BRNO MÁ 1&nbsp;592 PRÁZDNÝCH<br>MĚSTSKÝCH BYTŮ. <span class="zbw-accent">PROČ?</span></span>' +
+        '<button type="button" class="zbw-pill" data-zbw-open aria-label="Otevřít: Chcete zvýšit šanci na městský byt? Zdarma poradíme">' +
+          '<span class="zbw-pill__text">CHCETE ZVÝŠIT ŠANCI NA<br>MĚSTSKÝ BYT? <span class="zbw-accent">ZDARMA PORADÍME</span></span>' +
         '</button>' +
         '<button type="button" class="zbw-close" data-zbw-dismiss aria-label="Zavřít">' +
           '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +

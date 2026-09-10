@@ -39,6 +39,7 @@
   transition: transform .2s cubic-bezier(.34,1.56,.64,1), filter .15s ease;
 }
 .zbw-pill:hover { transform: scale(1.03) rotate(-0.6deg); filter: brightness(1.08); }
+.zbw-pill:active { transform: scale(0.96); }
 .zbw-pill__text {
   font-family: 'SVGD', Archivo, system-ui, sans-serif;
   font-weight: 600;
@@ -73,14 +74,20 @@
 .zbw-panel {
   display: none;
   position: relative;
-  background: #fff;
+  background: #f4faf6;
+  border: 1px solid #ddeee2;
   border-radius: 14px;
   box-shadow: 0 24px 50px -18px rgba(0,0,0,0.35);
   padding: 26px 24px 22px;
   width: min(380px, calc(100vw - 40px));
 }
-.zbw.is-open .zbw-panel { display: block; }
+.zbw.is-open .zbw-panel { display: block; animation: zbw-panel-in .32s cubic-bezier(.34,1.4,.64,1); }
 .zbw.is-open .zbw-pill-wrap { display: none; }
+
+@keyframes zbw-panel-in {
+  from { opacity: 0; transform: scale(0.92) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
 
 .zbw-panel__kicker {
   font-family: 'Archivo', system-ui, sans-serif;

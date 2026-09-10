@@ -28,14 +28,15 @@ PILLARS = [
     {"title": "Bezpečná mobilita", "heading": "Aby na brněnských ulicích nikdo neumíral",
      "photo": "04mobilita.jpg",
      "text": ("Zabezpečíme cesty do škol, zklidníme provoz v obytných ulicích a postavíme cyklostezky, po "
-              "kterých se dá jet i s dětmi. Přednost dostanou místa, kde lidé sami říkají, že se bojí přejít.")},
+              "kterých se dá jet i s dětmi. Přednost dostanou místa, kde lidé sami říkají, že se necítí bezpečně.")},
     {"title": "Veřejný prostor a zeleň", "heading": "Aby se ve městě dalo žít i v létě",
      "photo": "02lavicka.jpg",
      "text": ("Vysadíme stromy do ulic, doplníme stín a vodní prvky a přestaneme kácet vzrostlé stromy jen "
               "proto, že pod zemí mají přednost kabely. A budeme je zalévat, protože bez toho výsadbu "
               "nepřežijí.")},
     {"title": "Doprava zdarma", "heading": "Aby šaliny zůstaly důvodem nejet autem",
-     "text": ("Zavedeme jízdné zdarma pro děti do 15 let, studenty do 26 a seniory nad 65, přidáme spoje "
+     "photo": "12tramvaje.jpg",
+     "text": ("Zavedeme jízdné zdarma pro děti do 15 let, studenty a seniory nad 65 let, přidáme spoje "
               "i klimatizované vozy. V centru nebudeme tramvaje omezovat.")},
     {"title": "Školy a děti", "heading": "Aby děti měly dobrou školu i péči",
      "photo": "03vzdelani.jpg",
@@ -43,8 +44,9 @@ PILLARS = [
               "a speciální pedagogy, nabídneme prostory pro pediatry ve čtvrtích, kde chybí, a začneme "
               "řešit nedostatek míst na středních školách.")},
     {"title": "Energie", "heading": "Abyste ušetřili za energie",
+     "photo": "08energie.jpg",
      "text": ("Zateplíme městské domy, zastíníme je proti letnímu horku a dáme na střechy fotovoltaiku, "
-              "ke které se přes komunitní energetiku dostanou i lidé v nájmu. Vlastníkům a družstvům "
+              "ke které se přes komunitní energetiku dostanou i lidé v nájmu. SVJ a družstvům "
               "pomůžeme od posudku až po dotaci.")},
     {"title": "Prázdniny", "heading": "Aby rodiny zvládly devět týdnů prázdnin",
      "photo_path": "wp-content/uploads/sites/123/2026/06/yanapi-senaud-87n4IpQl6c4-unsplash-768x432.jpg",
@@ -58,9 +60,9 @@ PILLARS = [
               "aktivitám.")},
     {"title": "Otevřená radnice", "heading": "Aby se o Brně nerozhodovalo bez vás",
      "photo": "06komunita.jpg",
-     "text": ("O změnách ve čtvrti se bude rozhodovat s lidmi, kterých se týkají, a ne až po dokončení. "
-              "Zveřejníme smlouvy i zakázky a každý rok ukážeme, jak plníme vlastní závazky, včetně toho, "
-              "co se nepovedlo.")},
+     "text": ("O změnách ve městě se bude rozhodovat s lidmi, kterých se týkají, a ne až po dokončení. "
+              "Zveřejníme všechny záměry a budeme je projednávat s lidmi. A každý rok ukážeme, jak plníme "
+              "vlastní závazky, včetně toho, co se nepovedlo.")},
 ]
 
 # (name, district, photo path relative to prefix, or None)
@@ -107,18 +109,29 @@ def pillar_card_html(prefix, p):
 
 
 PROGRAM_TEASER = [
-    (ICON_ASK, "Zeptejte se na program chatbota", "bg-pink text-ink", "program/#chat"),
-    (ICON_LISTEN, "Poslechněte si program jako podcast", "bg-ink text-white", "program/"),
-    (ICON_READ, "Přečtěte si program", "bg-green text-ink", "program/"),
+    (ICON_ASK, "Zeptejte se na program chatbota",
+     "Program má 256 konkrétních opatření. Chatbot vám pomůže najít odpověď na to, co vás zajímá.",
+     "Otevřít chat", "btn-pink", "program/#chat"),
+    (ICON_LISTEN, "Poslechněte si program jako podcast",
+     "Nechce se vám program číst? Poslechněte si o něm podcast.",
+     "Poslechnout", "btn-ink", "program/#podcast"),
+    (ICON_READ, "Přečtěte si program",
+     "Kompletní program k procházení na webu i ke stažení jako PDF nebo eBook.",
+     "Přečíst program", "btn-green", "program/"),
 ]
 
 
 def program_teaser_html(prefix):
     return "\n".join(
-        f'''<a class="group flex items-center gap-3 justify-center {classes} font-svgd font-bold text-[15px] px-6 py-5 text-center" href="{prefix}{href}">
-<span class="w-6 h-6 shrink-0">{icon}</span>{title}
-</a>'''
-        for icon, title, classes, href in PROGRAM_TEASER
+        f'''<div class="bg-white shadow-card p-5">
+<div class="flex items-center gap-2.5 mb-2">
+<span class="w-5 h-5 block shrink-0 text-green-deep">{icon}</span>
+<p class="font-display text-ink font-black text-[17px] uppercase tracking-tight leading-[1.2]">{heading}</p>
+</div>
+<p class="text-[17px] text-black/60 leading-[1.5] mb-3">{body}</p>
+<a class="btn btn-md {btn_class} w-full" href="{prefix}{href}">{label}</a>
+</div>'''
+        for icon, heading, body, label, btn_class, href in PROGRAM_TEASER
     )
 
 
@@ -190,23 +203,26 @@ def build():
 </div>
 </section>
 
-<section class="bg-white pt-10 pb-16 px-14 max-md:pt-8 max-md:pb-10 max-md:px-5" id="diagnoza">
+<section class="bg-white pt-10 pb-10 px-14 max-md:pt-8 max-md:pb-8 max-md:px-5" id="diagnoza">
 <div class="mx-auto max-w-[800px] text-center mb-16 max-md:mb-10">
 <p class="font-svgd text-[28px] max-md:text-[21px] leading-[1.45] text-ink mb-6">Brno má skoro všechno, co dobré město potřebuje. Univerzity, kulturu, šaliny, přírodu na dosah. A pořád si drží lidské měřítko, díky kterému se tu dá žít sousedsky a&nbsp;normálně. Přesto asi všichni cítíme, že <strong>Brno má na víc</strong>.</p>
 <p class="text-[18px] max-md:text-[16px] leading-[1.6] text-black/70">V Brně stojí 1&nbsp;592 městských bytů prázdných. Ulice patří spíš autům než dětem. A v létě je na nich nesnesitelné horko, protože chybí stromy a další zeleň. Radnice mezitím řeší arénu a lanovku.</p>
 </div>
 <div class="mx-auto max-w-[1040px]">
 <h2 class="font-display text-ink font-black text-[26px] max-md:text-[22px] uppercase tracking-tight leading-[1.15] mb-8">Věci, do kterých se pustíme hned po volbách:</h2>
-<div class="grid grid-cols-3 gap-6 max-nav:grid-cols-2 max-md:grid-cols-1 mb-8">
+<div class="grid grid-cols-3 gap-6 max-nav:grid-cols-2 max-md:grid-cols-1 mb-10">
 {pillars_html}
 </div>
+<div class="bg-[#f4faf6] p-8 max-md:p-5">
+<p class="font-svgd text-black/70 font-bold text-[15px] uppercase tracking-[0.1em] mb-5">Chcete vědět víc?</p>
 <div class="grid grid-cols-3 gap-4 max-nav:grid-cols-1">
 {program_teaser_html(prefix)}
 </div>
 </div>
+</div>
 </section>
 
-<section class="bg-paper pt-16 pb-24 px-14 max-md:pt-10 max-md:pb-14 max-md:px-5">
+<section class="bg-paper pt-10 pb-24 px-14 max-md:pt-8 max-md:pb-14 max-md:px-5">
 <div class="mx-auto max-w-[1040px]">
 <div class="grid grid-cols-[2fr_1fr] gap-10 mb-10 items-start max-nav:grid-cols-1">
 <div>
@@ -268,14 +284,14 @@ def build():
 <p class="font-display text-ink font-black text-[20px] uppercase tracking-tight leading-tight mb-1">Nechejte na sebe kontakt</p>
 <p class="text-[15px] font-bold text-black/70">Chcete vědět o dalších procházkách a akcích brněnských Zelených?</p>
 </div>
-{newsletter_widget_html("web-general", "", submit_label="Přihlásit se", variant="light")}
+{newsletter_widget_html("brno_newsletter", "", submit_label="Přihlásit se", variant="light")}
 </div>
 </section>'''
 
     html = f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
-{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – Web Strany zelených v Brně")}
+{head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!", og_image="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg")}
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/donate-form.css" rel="stylesheet"/>
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/newsletter-form.css" rel="stylesheet"/>
 </head>

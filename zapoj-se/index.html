@@ -9,15 +9,16 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="../wp-content/themes/zeleni-new/assets/css/tailwind.css" rel="stylesheet"/>
-<title>Zapoj se – Zelené Brno</title>
+<title>Zelené Brno – Zapojte se do kampaně</title>
 <meta content="max-image-preview:large" name="robots"/>
 <meta name="description" content="Zapojte se do kampaně Zelené Brno – jako dobrovolník, dobrovolnice nebo podporovatel v ulicích i online."/>
 <link rel="canonical" href="https://zelenebrno.cz/zapoj-se/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Zelené Brno"/>
-<meta property="og:title" content="Zapoj se – Zelené Brno"/>
+<meta property="og:title" content="Zelené Brno – Zapojte se do kampaně"/>
 <meta property="og:description" content="Zapojte se do kampaně Zelené Brno – jako dobrovolník, dobrovolnice nebo podporovatel v ulicích i online."/>
 <meta property="og:url" content="https://zelenebrno.cz/zapoj-se/"/>
+<meta property="og:image" content="https://zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-tym.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 
 
@@ -28,8 +29,10 @@
 
 <link href="../wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
 <link href="../wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>
+<link href="../wp-content/themes/zeleni-new/assets/css/volunteer-form.css" rel="stylesheet"/>
 
 <meta content="WordPress 7.1" name="generator"/>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="12e306b8-b908-43ac-8c54-5de37b73809c"></script>
 
 
 <meta content="v1" name="tec-api-version"/><meta content="https://zelenebrno.cz" name="tec-api-origin"/><link href="../wp-content/uploads/sites/123/2026/03/cropped-Kopie-navrhu-Profilovka-Mesto-1-scaled-1-32x32.png" rel="icon" sizes="32x32"/>
@@ -81,17 +84,67 @@
 </div>
 </div>
 <main class="site-main flex-1" id="site-main"><section class="bg-white py-20 px-14 max-md:py-12 max-md:px-5">
-<div class="mx-auto max-w-[800px]">
-<h1 class="font-display text-ink font-black text-[56px] max-md:text-4xl uppercase tracking-tight leading-[1.1] mb-6">Zapoj se</h1>
+<div class="mx-auto max-w-[1080px] grid grid-cols-[1fr_320px] gap-12 max-nav:grid-cols-1">
+<div class="max-w-[800px]">
+<h1 class="font-display text-ink font-black text-[56px] max-md:text-4xl uppercase tracking-tight leading-[1.1] mb-6">Zapojte se do kampaně</h1>
+<div class="overflow-hidden">
+<img alt="Dobrovolník kampaně rozdává letáky u stánku Zelené Brno" class="w-[280px] h-[220px] max-md:w-full max-md:h-auto object-cover shadow-card float-right ml-6 mb-4" src="../wp-content/uploads/sites/123/2026/09/zapojte-se-akce.jpg"/>
 <article class="wysiwyg">
 <p>Hodí se nám hlavně vaše energie a čas — být v ulicích na našich stráncích, mluvit s lidmi, roznášet materiály, přidat se na happeningy, propojovat, držet tým pohromadě. Péct buchty!</p>
 <p>A přijdete mezi fajn lidi, kterým na Brně záleží stejně jako vám!</p>
-<p>Vyplňte formulář a přidejte se…</p>
+<p>Vyplňte formulář a přidejte se. Do kampaně se přidalo už přes 70 lidí.</p>
 </article>
-<div class="mt-8">
-<a class="btn btn-green" href="https://actionnetwork.org/forms/kampan-brno?utm_source=zelenebrno.cz" rel="noopener" target="_blank">Chci pomoct s kampaní</a>
 </div>
-<p class="text-black/50 text-[14px] mt-4">Do kampaně se už přidalo přes 70 lidí.</p>
+<div class="zb-volunteer" data-volunteer-form>
+<form id="volunteerForm">
+<div class="zb-volunteer-hp" aria-hidden="true"><label>Nevyplňujte, pokud jste člověk<input autocomplete="off" data-vf-hp tabindex="-1" type="text"/></label></div>
+<div class="zb-volunteer-grid">
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-first-name">Jméno *</label>
+<input autocomplete="given-name" data-vf-first-name id="vf-first-name" required type="text"/>
+</div>
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-last-name">Příjmení *</label>
+<input autocomplete="family-name" data-vf-last-name id="vf-last-name" required type="text"/>
+</div>
+</div>
+<div class="zb-volunteer-grid">
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-email">E-mail *</label>
+<input autocomplete="email" data-vf-email id="vf-email" required type="email"/>
+</div>
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-phone">Telefon</label>
+<input autocomplete="tel" data-vf-phone id="vf-phone" type="tel"/>
+</div>
+</div>
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-district">Ve které části Brna žijete?</label>
+<input data-vf-district id="vf-district" type="text"/>
+</div>
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-help">S čím dokážete pomoci?<span class="zb-volunteer-hint">Roznos letáků a volebních novin, logistika a převozy, kampaň v ulicích u stánků, zapojení se do happeningu, organizační podpora nebo cokoli jiného…</span></label>
+<textarea data-vf-help id="vf-help" placeholder="S čím můžete pomoci?"></textarea>
+</div>
+<div class="zb-volunteer-field">
+<label class="zb-volunteer-label" for="vf-time">Kolik času můžete kampani věnovat?<span class="zb-volunteer-hint">Upřesněte: např. počet hodin týdně, několik vyhrazených časových období, jednorázově, flexibilně…</span></label>
+<textarea data-vf-time id="vf-time" placeholder="Kolik času máte?"></textarea>
+</div>
+<label class="zb-volunteer-consent">
+<input required type="checkbox"/>
+<span>Poskytnutím osobních údajů udělujete souhlas Straně zelených (IČ 00409740) zpracovávat vaše osobní údaje za účelem kontaktování zájemců a zájemkyň o zapojení do volební kampaně pro komunální volby 2026 v Brně. Podrobněji o ochraně osobních údajů na <a href="https://www.zeleni.cz/ochrana-osobnich-udaju/" rel="noopener" target="_blank">zeleni.cz/ochrana-osobnich-udaju</a>.</span>
+</label>
+<p class="zb-volunteer-error" data-vf-error>Vyplňte prosím jméno, příjmení a platný e-mail.</p>
+<button class="btn btn-green" data-vf-submit type="submit">Chci pomoct s kampaní</button>
+</form>
+<p class="zb-volunteer-success" data-vf-success hidden="">Díky! Ozveme se vám s dalšími informacemi.</p>
+</div>
+</div>
+<div class="bg-[#f4faf6] p-6 max-nav:max-w-[320px]">
+<p class="font-svgd text-black/70 font-bold text-[15px] uppercase tracking-[0.1em] mb-4">Stáhněte si plakáty</p>
+<img alt="Plakát kampaně Zelené Brno" class="w-full shadow-card mb-4" src="../wp-content/uploads/sites/123/2026/09/ruzovy-plakat.png"/>
+<a class="text-green-deep font-bold text-[15px] underline underline-offset-2 hover:text-green transition" href="../wp-content/uploads/sites/123/2026/09/plakaty-a3-ruzove.pdf" rel="noopener" target="_blank">Stáhnout plakáty (PDF)</a>
+</div>
 </div>
 </section>
 </main><!-- /#site-main -->
@@ -173,6 +226,7 @@
 
 <script id="zeleni-main-js" src="../wp-content/themes/zeleni-new/assets/js/main.js"></script>
 <script src="../wp-content/themes/zeleni-new/assets/js/floating-widget.js"></script>
+<script src="../wp-content/themes/zeleni-new/assets/js/volunteer-form.js"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://zelenebrno.cz/wp-includes/js/wp-emoji-release.min.js?ver=7.1"}}
 </script>
