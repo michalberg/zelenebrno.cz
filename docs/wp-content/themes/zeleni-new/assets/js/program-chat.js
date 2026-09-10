@@ -66,6 +66,32 @@
       .replace(/^\s*[-*]\s+/gm, "- ");
   }
 
+  // Turns bare URLs in plain text into real <a> links, without ever
+  // interpreting the rest of the model's output as HTML (only the matched
+  // URL substrings become elements — everything else stays a text node).
+  var urlRegex = /(https?:\/\/[^\s<>"]+[^\s<>".,;:!?)])/g;
+  function renderTextWithLinks(container, text) {
+    container.textContent = "";
+    var lastIndex = 0;
+    var match;
+    urlRegex.lastIndex = 0;
+    while ((match = urlRegex.exec(text))) {
+      if (match.index > lastIndex) {
+        container.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+      }
+      var a = document.createElement("a");
+      a.href = match[0];
+      a.textContent = match[0];
+      a.target = "_blank";
+      a.rel = "noopener";
+      container.appendChild(a);
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < text.length) {
+      container.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+  }
+
   function showAnswer(text, variant) {
     if (!answerBox) return;
     answerBox.hidden = false;
@@ -76,8 +102,10 @@
           '<span class="program-chat-modal__dots"><span></span><span></span><span></span></span>' +
           text +
         "</span>";
+    } else if (variant === "is-error") {
+      answerBox.textContent = text;
     } else {
-      answerBox.textContent = variant === "is-error" ? text : stripMarkdown(text);
+      renderTextWithLinks(answerBox, stripMarkdown(text));
     }
     if (variant) answerBox.classList.add(variant);
   }

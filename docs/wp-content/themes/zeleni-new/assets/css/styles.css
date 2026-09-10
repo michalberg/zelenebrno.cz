@@ -777,6 +777,7 @@ html.program-chat-open { overflow: hidden; }
   color: var(--color-ink);
   white-space: pre-wrap;
 }
+.program-chat-modal__answer a { color: var(--color-green-deep, #06A856); text-decoration: underline; }
 .program-chat-modal__answer.is-loading { color: rgba(0,0,0,0.4); font-style: italic; }
 .program-chat-modal__answer.is-error { background: #fdecec; color: #9a2b2b; }
 .program-chat-modal__loading { display: inline-flex; align-items: center; gap: 8px; }

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sync-program": "cp ../docs/scripts/data/program_final.md src/program.md",
+    "sync-program": "cp ../docs/scripts/data/program_final.md src/program.md && cp ../docs/scripts/data/chatbot_appendix.md src/appendix.md",
     "dev": "npm run sync-program && wrangler dev",
     "deploy": "npm run sync-program && wrangler deploy"
   },
