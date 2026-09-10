@@ -107,9 +107,9 @@ def program_formats_html(prefix):
 </div>
 </div>
 <p class="text-center text-[15px] font-bold mt-4">
-<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.pdf" download>Stáhnout jako PDF</a>
+<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.pdf" download data-umami-event="download-program-pdf">Stáhnout jako PDF</a>
 <span class="mx-2 text-black/30">·</span>
-<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.epub" download>Stáhnout jako eBook (.epub)</a>
+<a class="text-green-deep underline underline-offset-2 hover:text-green transition" href="{base}/brno-do-detailu.epub" download data-umami-event="download-program-epub">Stáhnout jako eBook (.epub)</a>
 </p>
 </div>
 </section>'''

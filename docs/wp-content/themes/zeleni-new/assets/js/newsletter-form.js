@@ -50,6 +50,7 @@
           if (!resp.ok) throw new Error("HTTP " + resp.status);
           form.hidden = true;
           success.hidden = false;
+          if (window.umami) window.umami.track("newsletter-submit", { tag: tag });
         })
         .catch(function (err) {
           console.error("Newsletter submit error:", err);

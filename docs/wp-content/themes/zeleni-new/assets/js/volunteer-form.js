@@ -66,6 +66,7 @@
           if (!resp.ok) throw new Error("HTTP " + resp.status);
           form.hidden = true;
           success.hidden = false;
+          if (window.umami) window.umami.track("volunteer-form-submit");
         })
         .catch(function (err) {
           console.error("Volunteer form submit error:", err);

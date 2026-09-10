@@ -121,6 +121,7 @@
 
           form.style.display = "none";
           success.hidden = false;
+          if (window.umami) window.umami.track("donate-form-submit");
 
           var ibanCompact = BANK_IBAN.replace(/\s+/g, "");
           var spayd = "SPD*1.0*ACC:" + ibanCompact + "*AM:" + amount + ".00*CC:CZK*X-VS:" + data.vs + "*MSG:DAR";

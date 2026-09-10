@@ -189,6 +189,7 @@
           if (!resp.ok) throw new Error("HTTP " + resp.status);
           el.classList.add("is-submitted");
           setLs(SUBMITTED_KEY, "1");
+          if (window.umami) window.umami.track("housing-guide-submit", { tag: CONFIG.tag });
         })
         .catch(function (err) {
           console.error("Floating widget submit error:", err);
