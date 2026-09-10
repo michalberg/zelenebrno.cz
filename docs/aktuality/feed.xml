@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Aktuality – Zelené Brno</title>
+    <link>https://www.zelenebrno.cz/aktuality/</link>
+    <description>Tiskové zprávy a aktuality koalice Zelené Brno k volbám do Zastupitelstva města Brna 2026.</description>
+    <language>cs</language>
+    <lastBuildDate>Thu, 10 Sep 2026 14:45:15 +0000</lastBuildDate>
+    <item>
+      <title>Pojďte pohlídat volby!</title>
+      <link>https://www.zelenebrno.cz/komise/</link>
+      <guid isPermaLink="true">https://www.zelenebrno.cz/komise/</guid>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0200</pubDate>
+      <description>Staňte se členem nebo členkou okrskové volební komise a pohlídejte průběh voleb v Brně.</description>
+    </item>
+    <item>
+      <title>Léto, které rodiny v Brně zvládnou</title>
+      <link>https://www.zelenebrno.cz/prazdniny/</link>
+      <guid isPermaLink="true">https://www.zelenebrno.cz/prazdniny/</guid>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 +0200</pubDate>
+      <description>Jak chce Zelené Brno pomoct rodinám zvládnout devět týdnů letních prázdnin bez zbytečného stresu a nákladů.</description>
+    </item>
+    <item>
+      <title>Brno má na víc, říkají Zelení. V široké koalici spojili zkušené osobnosti z radnic i nové tváře</title>
+      <link>https://www.zelenebrno.cz/brno-ma-na-vic-rikaji-zeleni-v-siroke-koalici-spojili-zkusene-osobnosti-z-radnic-i-nove-tvare/</link>
+      <guid isPermaLink="true">https://www.zelenebrno.cz/brno-ma-na-vic-rikaji-zeleni-v-siroke-koalici-spojili-zkusene-osobnosti-z-radnic-i-nove-tvare/</guid>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0200</pubDate>
+      <description>Zelení v Brně představují širokou koalici Zelené Brno se zkušenými starosty a starostkami i novými tvářemi.</description>
+    </item>
+    <item>
+      <title>Na veřejná gymnázia a lycea v Brně se dostala méně než polovina uchazečů. Zelení chtějí městské lyceum</title>
+      <link>https://www.zelenebrno.cz/na-verejna-gymnazia-a-lycea-v-brne-se-dostala-mene-nez-polovina-uchazecu-zeleni-chteji-mestske-lyceum/</link>
+      <guid isPermaLink="true">https://www.zelenebrno.cz/na-verejna-gymnazia-a-lycea-v-brne-se-dostala-mene-nez-polovina-uchazecu-zeleni-chteji-mestske-lyceum/</guid>
+      <pubDate>Tue, 26 May 2026 00:00:00 +0200</pubDate>
+      <description>Na veřejná gymnázia a lycea v Brně se letos dostalo jen 44 % uchazečů. Zelení navrhují zřídit městské lyceum.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,7 +6,17 @@ campaign site to learn who she is. Run from `site/`:
 """
 from pathlib import Path
 
-from partials import nav_html, footer_html, closing_cta_html, person_modal_html, head_html, end_scripts_html
+from partials import nav_html, footer_html, closing_cta_html, person_modal_html, head_html, end_scripts_html, jsonld_script
+
+PERSON_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Natálie Vencovská",
+    "jobTitle": "Lídryně kandidátky Zelené Brno",
+    "url": "https://www.zelenebrno.cz/natalie-vencovska/",
+    "image": "https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-hlavni-foto.jpg",
+    "affiliation": {"@type": "Organization", "name": "Zelené Brno", "url": "https://www.zelenebrno.cz/"},
+}
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -88,6 +98,7 @@ def build():
 <html lang="cs">
 <head>
 {head_html("Natálie Vencovská", DESCRIPTION, prefix, "/natalie-vencovska/")}
+{jsonld_script(PERSON_JSONLD)}
 </head>
 <body class="wp-singular page-template font-sans bg-paper text-ink antialiased min-h-screen flex flex-col tribe-no-js">
 {nav_html(prefix)}

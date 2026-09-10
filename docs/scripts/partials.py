@@ -3,11 +3,33 @@
 generator/patch script in this folder. `prefix` is the relative path back to
 the site root: "" at depth 0, "../" at depth 1, "../../" at depth 2, etc.
 """
+import json
 import re
 
 _NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksouvzAIKSOUVZ]) ")
 
 DEFAULT_OG_IMAGE = "https://www.zelenebrno.cz/wp-content/themes/zeleni-new/assets/img/og/default.jpg"
+
+ORGANIZATION_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zelené Brno",
+    "url": "https://www.zelenebrno.cz/",
+    "logo": "https://www.zelenebrno.cz/wp-content/themes/zeleni-new/assets/img/favicon.png",
+    "description": (
+        "Koalice Zelené Brno (Strana zelených, Žít Brno, SEN 21, Liberálně ekologická strana, "
+        "Hnutí Kruh, Volt Česko, hnutí Budoucnost) kandiduje pod číslem 3 do Zastupitelstva "
+        "města Brna v komunálních volbách 9.–10. října 2026."
+    ),
+    "sameAs": [
+        "https://www.facebook.com/zelenebrno",
+        "https://www.instagram.com/zelenebrno/",
+    ],
+}
+
+
+def jsonld_script(data):
+    return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 
 def nbsp_single_letters(text):
@@ -184,6 +206,8 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
 {og_image_tag}<meta name="twitter:card" content="summary_large_image"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>
+<link href="{p}aktuality/feed.xml" rel="alternate" title="Aktuality – Zelené Brno" type="application/rss+xml"/>
+{jsonld_script(ORGANIZATION_JSONLD)}
 <meta content="WordPress 7.1" name="generator"/>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="12e306b8-b908-43ac-8c54-5de37b73809c"></script>'''
 

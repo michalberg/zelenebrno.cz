@@ -9,8 +9,24 @@ from pathlib import Path
 from partials import (
     nav_html, footer_html, person_modal_html, head_html, end_scripts_html,
     donate_teaser_html, newsletter_widget_html, coalition_panel_html,
-    ICON_READ, ICON_LISTEN, ICON_ASK, nbsp_single_letters,
+    ICON_READ, ICON_LISTEN, ICON_ASK, nbsp_single_letters, jsonld_script,
 )
+
+ELECTION_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Komunální volby 2026 v Brně",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-10",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+        "@type": "Place",
+        "name": "Brno",
+        "address": {"@type": "PostalAddress", "addressLocality": "Brno", "addressCountry": "CZ"},
+    },
+    "organizer": {"@type": "Organization", "name": "Zelené Brno", "url": "https://www.zelenebrno.cz/"},
+}
 
 ROOT = Path(__file__).resolve().parent.parent
 PROCHAZKY_JSON = ROOT / "wp-content/themes/zeleni-new/assets/data/prochazky.json"
@@ -292,6 +308,7 @@ def build():
 <html lang="cs">
 <head>
 {head_html("Zelené Brno", DESCRIPTION, prefix, "/", full_title="Zelené Brno – protože Brno má na víc!")}
+{jsonld_script(ELECTION_JSONLD)}
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/donate-form.css" rel="stylesheet"/>
 <link href="{prefix}wp-content/themes/zeleni-new/assets/css/newsletter-form.css" rel="stylesheet"/>
 </head>

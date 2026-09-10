@@ -8,22 +8,26 @@ ROOT = Path(__file__).resolve().parent.parent
 
 DESCRIPTION = "Tiskové zprávy a aktuality koalice Zelené Brno k volbám do Zastupitelstva města Brna 2026."
 
-# (date, title, slug, image)
+# (date, title, slug, image, description) — description feeds feed.xml, not the card.
 ITEMS = [
     ("12.8.2026", "Pojďte pohlídat volby!", "komise/",
-     "wp-content/uploads/sites/123/2026/08/komise-1-768x512.png"),
+     "wp-content/uploads/sites/123/2026/08/komise-1-768x512.png",
+     "Staňte se členem nebo členkou okrskové volební komise a pohlídejte průběh voleb v Brně."),
     ("25.6.2026", "Léto, které rodiny v Brně zvládnou", "prazdniny/",
-     "wp-content/uploads/sites/123/2026/06/yanapi-senaud-87n4IpQl6c4-unsplash-768x432.jpg"),
+     "wp-content/uploads/sites/123/2026/06/yanapi-senaud-87n4IpQl6c4-unsplash-768x432.jpg",
+     "Jak chce Zelené Brno pomoct rodinám zvládnout devět týdnů letních prázdnin bez zbytečného stresu a nákladů."),
     ("9.6.2026", "Brno má na víc, říkají Zelení. V široké koalici spojili zkušené osobnosti z radnic i nové tváře",
      "brno-ma-na-vic-rikaji-zeleni-v-siroke-koalici-spojili-zkusene-osobnosti-z-radnic-i-nove-tvare/",
-     "wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-12-768x512.jpg"),
+     "wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-12-768x512.jpg",
+     "Zelení v Brně představují širokou koalici Zelené Brno se zkušenými starosty a starostkami i novými tvářemi."),
     ("26.5.2026", "Na veřejná gymnázia a lycea v Brně se dostala méně než polovina uchazečů. Zelení chtějí městské lyceum",
      "na-verejna-gymnazia-a-lycea-v-brne-se-dostala-mene-nez-polovina-uchazecu-zeleni-chteji-mestske-lyceum/",
-     "wp-content/uploads/sites/123/2026/05/f1digitals-omr-3723130-768x512.jpg"),
+     "wp-content/uploads/sites/123/2026/05/f1digitals-omr-3723130-768x512.jpg",
+     "Na veřejná gymnázia a lycea v Brně se letos dostalo jen 44 % uchazečů. Zelení navrhují zřídit městské lyceum."),
 ]
 
 
-def card_html(prefix, date, title, slug, image):
+def card_html(prefix, date, title, slug, image, description=""):
     return f'''<a class="group block bg-white shadow-card" href="{prefix}{slug}">
 <img alt="{title}" class="aspect-[16/10] w-full object-cover" src="{prefix}{image}"/>
 <div class="p-6">
