@@ -27,6 +27,7 @@
     if (!fromHash && location.hash !== "#chat") {
       history.pushState({ zbChat: true }, "", "#chat");
     }
+    if (window.umami) window.umami.track("chat-opened");
   }
   function close(fromHash) {
     modal.setAttribute("aria-hidden", "true");
