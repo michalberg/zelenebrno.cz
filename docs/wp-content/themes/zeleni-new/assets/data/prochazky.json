@@ -1,21 +1,182 @@
 [
-  {"date": "2026-09-03", "time": "17:30", "title": "O náplavce a řekách", "desc": "Jak Brno řeší povodně, novou divočinu na náplavce i to, co se skrývá pod hladinou Svratky.", "place": "u haly Rondo", "people": "D. Veselý, J. Flamiková", "url": "https://fb.me/e/68TECijw4"},
-  {"date": "2026-09-04", "time": "17:00", "title": "Zelené balkony", "desc": "Tipy, jak i malý balkon proměnit v místo, které prospívá vám i městské přírodě.", "place": "před Nejvyšším soudem, Burešova 20", "people": "V. Surá", "url": "https://fb.me/e/8rliN8joK"},
-  {"date": "2026-09-08", "time": "17:30", "title": "Jak se dělá dobrá ulice?", "desc": "Stromy, chodníky, přechody i parkování, co dělá z ulice místo, kde se dobře žije.", "place": "zastávka Obilní trh", "people": "J. Flamiková", "url": "https://fb.me/e/6kABJZH0g"},
-  {"date": "2026-09-09", "time": "17:30", "title": "Bude nám horko z horkovodu?", "desc": "Horkovod z Dukovan, obnovitelné zdroje a cesta k soběstačné brněnské energetice.", "place": "Moravské náměstí u jezírka", "people": "M. Ander", "url": "https://fb.me/e/6dIbhWYFg"},
-  {"date": "2026-09-10", "time": "18:00", "title": "Jak se kradly byty", "desc": "Historie i současnost bytové politiky na Brně-střed a cesta k transparentnímu bydlení.", "place": "dvůr radnice Brno-střed", "people": "K. Fuchsová, D. Oplatek", "url": "https://fb.me/e/7Bt78MrsK"},
-  {"date": "2026-09-10", "time": "17:30", "title": "Projděme se Komínem", "desc": "Komínské louky, molo u řeky i rekonstrukce Staré hasičky na komunitní centrum.", "place": "u Sokolovny (zast. Svratecká)", "people": "M. Blatná", "url": "https://fb.me/e/74MbsUoU2"},
-  {"date": "2026-09-15", "time": "17:30", "title": "Procházka Kamenkou", "desc": "Stoletá dělnická kolonie v bývalém lomu a výzvy jejího dalšího rozvoje.", "place": "u Duck baru v Kamence", "people": "R. Horák", "url": "https://fb.me/e/4VRc1nXDq"},
-  {"date": "2026-09-15", "time": "17:00", "title": "Péče o zeleň v extrémních podmínkách Kamenného vrchu", "desc": "Jak Nový Lískovec zvládá horko a sucho, jezírko na dešťovku, zelené střechy i solární panely.", "place": "komunitní centrum Skála, Oblá 505/54a", "people": "J. Drápalová, M. Vlašín, P. Forchtgott", "url": "https://fb.me/e/724WnEDsp"},
-  {"date": "2026-09-16", "time": "17:00", "title": "Muraly v Bronxu", "desc": "Dvanáct velkoplošných maleb, jejich příběhy a proměna veřejného prostoru.", "place": "Cejl 28", "people": "M. Reiner, N. Vencovská", "url": "https://fb.me/e/6jUV0WbV9"},
-  {"date": "2026-09-17", "time": "17:30", "title": "Život s řekou", "desc": "Svratka jako zdroj obživy i zábavy Jundrova od 19. století do současnosti.", "place": "pláž Prašnice", "people": "I. Fajnorová", "url": "https://fb.me/e/6VSFbYA7Y"},
-  {"date": "2026-09-18", "time": "17:30", "title": "Vzpomínáme na devadesátky", "desc": "Nezávislá kultura a aktivismus v Brně v době bez mobilů a internetu.", "place": "před klubem Mersey, Minská 15", "people": "Jiřina, K. Fuchsová", "url": "https://fb.me/e/8iZjXpXMq"},
-  {"date": "2026-09-19", "time": "10:00", "title": "Běh kolem Svitavy a Svratky", "desc": "Společný běh podél řek, kdo chce, může si přidat i pár otázek pro kandidáty.", "place": "ul. Gargulákova, most přes Svitavu", "people": "I. Skopal, K. Fuchsová", "url": "https://fb.me/e/52y5Brwy2"},
-  {"date": "2026-09-22", "time": "17:30", "title": "Komín, jak ho možná neznáte", "desc": "Druhá šance projít si Komín po stejné trase.", "place": "u Sokolovny (zast. Svratecká)", "people": "M. Blatná", "url": "https://fb.me/e/7sQiq2CME"},
-  {"date": "2026-09-23", "time": "17:00", "title": "Literární Brno", "desc": "Po stopách Ivana Blatného, Milana Kundery i dalších osobností brněnské literatury.", "place": "Obilní trh 4", "people": "M. Reiner", "url": "https://fb.me/e/eeTn36Ihk"},
-  {"date": "2026-09-24", "time": "18:00", "title": "Mýty a realita brněnského Bronxu", "desc": "Historie i budoucnost čtvrti tak, aby rozvoj neznamenal vytlačování místních obyvatel.", "place": "před Divadlem Radost, Bratislavská", "people": "K. Fuchsová, D. Oplatek", "url": "https://fb.me/e/6Nomooge5"},
-  {"date": "2026-09-29", "time": "17:00", "title": "Jak vrátit život městským potokům a proč na tom záleží?", "desc": "Podél potoka Vrbovce k tomu, co udělá s krajinou narovnané betonové koryto a jak vodě vrátit život.", "place": "lávka přes Svratku u zast. Kamenolom", "people": "M. Vencálek, P. Pařil", "url": "https://fb.me/e/4hncOuIOp"},
-  {"date": "2026-09-30", "time": "17:30", "title": "Za architekturou židenické Smuteční síně", "desc": "Obdivujte výtvarná díla i promyšlenou architekturu nově opravované síně.", "place": "Smuteční síň v Židenicích", "people": "P. Kunc", "url": "https://fb.me/e/duxVz2mNz"},
-  {"date": "2026-10-01", "time": "17:00", "title": "Podnikání v Brně", "desc": "Jak podpořit drobné živnostníky a udržitelné podnikání ve městě.", "place": "Punkt, Starobrněnská 16", "people": "K. Dutkiewič, J. Malenovský", "url": "https://fb.me/e/6j4dfIHJP"},
-  {"date": "2026-10-03", "time": "9:00", "title": "Procházka pro klidnější mysl", "desc": "Jak nám příroda, chůze a vědomá pozornost pomáhají zvládat každodenní stres.", "place": "u Ponavy v Lužánkách", "people": "J. Flamiková", "url": "https://fb.me/e/4X6vMbA9v"}
+  {
+    "date": "2026-09-03",
+    "time": "17:30",
+    "title": "O náplavce a řekách",
+    "desc": "Jak Brno řeší povodně, novou divočinu na náplavce i to, co se skrývá pod hladinou Svratky.",
+    "place": "u haly Rondo",
+    "people": "D. Veselý, J. Flamiková",
+    "url": "https://fb.me/e/68TECijw4"
+  },
+  {
+    "date": "2026-09-04",
+    "time": "17:00",
+    "title": "Zelené balkony",
+    "desc": "Tipy, jak i malý balkon proměnit v místo, které prospívá vám i městské přírodě.",
+    "place": "před Nejvyšším soudem, Burešova 20",
+    "people": "V. Surá",
+    "url": "https://fb.me/e/8rliN8joK"
+  },
+  {
+    "date": "2026-09-08",
+    "time": "17:30",
+    "title": "Jak se dělá dobrá ulice?",
+    "desc": "Stromy, chodníky, přechody i parkování, co dělá z ulice místo, kde se dobře žije.",
+    "place": "zastávka Obilní trh",
+    "people": "J. Flamiková",
+    "url": "https://fb.me/e/6kABJZH0g"
+  },
+  {
+    "date": "2026-09-09",
+    "time": "17:30",
+    "title": "Bude nám horko z horkovodu?",
+    "desc": "Horkovod z Dukovan, obnovitelné zdroje a cesta k soběstačné brněnské energetice.",
+    "place": "Moravské náměstí u jezírka",
+    "people": "M. Ander",
+    "url": "https://fb.me/e/6dIbhWYFg"
+  },
+  {
+    "date": "2026-09-10",
+    "time": "18:00",
+    "title": "Jak se kradly byty",
+    "desc": "Historie i současnost bytové politiky na Brně-střed a cesta k transparentnímu bydlení.",
+    "place": "dvůr radnice Brno-střed",
+    "people": "K. Fuchsová, D. Oplatek",
+    "url": "https://fb.me/e/7Bt78MrsK"
+  },
+  {
+    "date": "2026-09-10",
+    "time": "17:30",
+    "title": "Projděme se Komínem",
+    "desc": "Komínské louky, molo u řeky i rekonstrukce Staré hasičky na komunitní centrum.",
+    "place": "u Sokolovny (zast. Svratecká)",
+    "people": "M. Blatná",
+    "url": "https://fb.me/e/74MbsUoU2"
+  },
+  {
+    "date": "2026-09-15",
+    "time": "17:30",
+    "title": "Procházka Kamenkou",
+    "desc": "Stoletá dělnická kolonie v bývalém lomu a výzvy jejího dalšího rozvoje.",
+    "place": "u Duck baru v Kamence",
+    "people": "R. Horák",
+    "url": "https://fb.me/e/4VRc1nXDq"
+  },
+  {
+    "date": "2026-09-15",
+    "time": "17:00",
+    "title": "Péče o zeleň v extrémních podmínkách Kamenného vrchu",
+    "desc": "Jak Nový Lískovec zvládá horko a sucho, jezírko na dešťovku, zelené střechy i solární panely.",
+    "place": "komunitní centrum Skála, Oblá 505/54a",
+    "people": "J. Drápalová, M. Vlašín, P. Forchtgott",
+    "url": "https://fb.me/e/724WnEDsp"
+  },
+  {
+    "date": "2026-09-16",
+    "time": "17:00",
+    "title": "Muraly v Bronxu",
+    "desc": "Dvanáct velkoplošných maleb, jejich příběhy a proměna veřejného prostoru.",
+    "place": "Cejl 28",
+    "people": "M. Reiner, N. Vencovská",
+    "url": "https://fb.me/e/6jUV0WbV9"
+  },
+  {
+    "date": "2026-09-17",
+    "time": "17:30",
+    "title": "Život s řekou",
+    "desc": "Svratka jako zdroj obživy i zábavy Jundrova od 19. století do současnosti.",
+    "place": "pláž Prašnice",
+    "people": "I. Fajnorová",
+    "url": "https://fb.me/e/6VSFbYA7Y"
+  },
+  {
+    "date": "2026-09-18",
+    "time": "17:30",
+    "title": "Vzpomínáme na devadesátky",
+    "desc": "Nezávislá kultura a aktivismus v Brně v době bez mobilů a internetu.",
+    "place": "před klubem Mersey, Minská 15",
+    "people": "Jiřina, K. Fuchsová",
+    "url": "https://fb.me/e/8iZjXpXMq"
+  },
+  {
+    "date": "2026-09-19",
+    "time": "10:00",
+    "title": "Běh kolem Svitavy a Svratky",
+    "desc": "Společný běh podél řek, kdo chce, může si přidat i pár otázek pro kandidáty.",
+    "place": "ul. Gargulákova, most přes Svitavu",
+    "people": "I. Skopal, K. Fuchsová",
+    "url": "https://fb.me/e/52y5Brwy2"
+  },
+  {
+    "date": "2026-09-22",
+    "time": "17:30",
+    "title": "Komín, jak ho možná neznáte",
+    "desc": "Druhá šance projít si Komín po stejné trase.",
+    "place": "u Sokolovny (zast. Svratecká)",
+    "people": "M. Blatná",
+    "url": "https://fb.me/e/7sQiq2CME"
+  },
+  {
+    "date": "2026-09-23",
+    "time": "17:00",
+    "title": "Literární Brno",
+    "desc": "Po stopách Ivana Blatného, Milana Kundery i dalších osobností brněnské literatury.",
+    "place": "Obilní trh 4",
+    "people": "M. Reiner",
+    "url": "https://fb.me/e/eeTn36Ihk"
+  },
+  {
+    "date": "2026-09-24",
+    "time": "18:00",
+    "title": "Mýty a realita brněnského Bronxu",
+    "desc": "Historie i budoucnost čtvrti tak, aby rozvoj neznamenal vytlačování místních obyvatel.",
+    "place": "před Divadlem Radost, Bratislavská",
+    "people": "K. Fuchsová, D. Oplatek",
+    "url": "https://fb.me/e/6Nomooge5"
+  },
+  {
+    "date": "2026-09-29",
+    "time": "17:00",
+    "title": "Jak vrátit život městským potokům a proč na tom záleží?",
+    "desc": "Podél potoka Vrbovce k tomu, co udělá s krajinou narovnané betonové koryto a jak vodě vrátit život.",
+    "place": "lávka přes Svratku u zast. Kamenolom",
+    "people": "M. Vencálek, P. Pařil",
+    "url": "https://fb.me/e/4hncOuIOp"
+  },
+  {
+    "date": "2026-09-30",
+    "time": "17:30",
+    "title": "Za architekturou židenické Smuteční síně",
+    "desc": "Obdivujte výtvarná díla i promyšlenou architekturu nově opravované síně.",
+    "place": "Smuteční síň v Židenicích",
+    "people": "P. Kunc",
+    "url": "https://fb.me/e/duxVz2mNz"
+  },
+  {
+    "date": "2026-10-01",
+    "time": "17:00",
+    "title": "Podnikání v Brně",
+    "desc": "Jak podpořit drobné živnostníky a udržitelné podnikání ve městě.",
+    "place": "Punkt, Starobrněnská 16",
+    "people": "K. Dutkiewič, J. Malenovský",
+    "url": "https://fb.me/e/6j4dfIHJP"
+  },
+  {
+    "date": "2026-10-03",
+    "time": "9:00",
+    "title": "Procházka pro klidnější mysl",
+    "desc": "Jak nám příroda, chůze a vědomá pozornost pomáhají zvládat každodenní stres.",
+    "place": "u Ponavy v Lužánkách",
+    "people": "J. Flamiková",
+    "url": "https://fb.me/e/4X6vMbA9v"
+  },
+  {
+    "date": "2026-10-07",
+    "time": "17:30",
+    "title": "Jak se dělá dobrá ulice?",
+    "desc": "Spodní část Údolní a Gorkého - stromy, chodníky, přechody i parkování, co dělá z ulice místo, kde se dobře žije.",
+    "place": "zastávka Obilní trh",
+    "people": "J. Flamiková",
+    "url": "https://fb.me/e/6kABJZH0g"
+  }
 ]
