@@ -1,8 +1,9 @@
 name: Chat Digest
 
 on:
-  schedule:
-    - cron: '0 5 * * *'  # 05:00 UTC = 07:00 CEST (léto) / 06:00 CET (zima)
+  # Automatic schedule paused for now (log viewing via the token URL is
+  # enough for the moment) — re-add a `schedule:` trigger below to resume
+  # the daily email digest. Manual runs still work via workflow_dispatch.
   workflow_dispatch:
     inputs:
       reason:
