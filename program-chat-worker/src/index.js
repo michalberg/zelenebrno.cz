@@ -202,22 +202,35 @@ async function handleAdminLogs(request, env, origin, allowedOrigins) {
     return json({ error: "Unauthorized" }, 401, corsHeaders(origin, allowedOrigins));
   }
   const url = new URL(request.url);
-  const limit = Math.min(parseInt(url.searchParams.get("limit") || "50", 10), 500);
-  // Keys are "log:<ISO timestamp>:<uuid>", so KV's default listing order is
-  // chronological ascending — fetch (up to KV's 1000/call cap) all matching
-  // keys first, THEN sort and take the newest `limit`, instead of limiting
-  // before sorting (which used to return the OLDEST entries, not newest).
+  const date = url.searchParams.get("date"); // "YYYY-MM-DD", optional
+
+  // Keys are "log:<ISO timestamp>:<uuid>" — an ISO timestamp starts with its
+  // own date, so "log:<date>" is a prefix match for every entry on that day
+  // and KV can filter server-side instead of us scanning everything.
+  const prefix = date ? `log:${date}` : "log:";
   let keys = [];
   let cursor;
   do {
-    const list = await env.CHAT_LOG.list({ prefix: "log:", cursor });
+    const list = await env.CHAT_LOG.list({ prefix, cursor });
     keys = keys.concat(list.keys);
     cursor = list.list_complete ? null : list.cursor;
   } while (cursor);
-  keys.sort((a, b) => (a.name < b.name ? 1 : -1));
-  const newest = keys.slice(0, limit);
+
+  let selected;
+  if (date) {
+    // A full day's worth for a digest — chronological, no artificial cap.
+    keys.sort((a, b) => (a.name < b.name ? -1 : 1));
+    selected = keys;
+  } else {
+    // Interactive default: newest `limit` entries. Sort before limiting —
+    // limiting first used to return the OLDEST entries, not newest.
+    const limit = Math.min(parseInt(url.searchParams.get("limit") || "50", 10), 500);
+    keys.sort((a, b) => (a.name < b.name ? 1 : -1));
+    selected = keys.slice(0, limit);
+  }
+
   const entries = await Promise.all(
-    newest.map(async (k) => JSON.parse(await env.CHAT_LOG.get(k.name)))
+    selected.map(async (k) => JSON.parse(await env.CHAT_LOG.get(k.name)))
   );
   // Raw token totals across the returned entries — not a $ figure, since
   // per-token pricing isn't hardcoded here. Cross-reference against
