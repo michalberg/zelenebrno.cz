@@ -197,11 +197,16 @@ async function handleChat(request, env, origin, allowedOrigins) {
 }
 
 async function handleAdminLogs(request, env, origin, allowedOrigins) {
+  const url = new URL(request.url);
   const auth = request.headers.get("Authorization") || "";
-  if (auth !== `Bearer ${env.ADMIN_TOKEN}`) {
+  // Also accept ?token= for browsing straight from a browser's address bar,
+  // where setting a custom header isn't possible — the header stays the
+  // preferred way (a URL can end up in browser history or server logs).
+  const tokenParam = url.searchParams.get("token") || "";
+  const authorized = auth === `Bearer ${env.ADMIN_TOKEN}` || (tokenParam && tokenParam === env.ADMIN_TOKEN);
+  if (!authorized) {
     return json({ error: "Unauthorized" }, 401, corsHeaders(origin, allowedOrigins));
   }
-  const url = new URL(request.url);
   const date = url.searchParams.get("date"); // "YYYY-MM-DD", optional
 
   // Keys are "log:<ISO timestamp>:<uuid>" — an ISO timestamp starts with its
