@@ -1658,10 +1658,6 @@ Zrevidujeme deset let starý plán Kreativního centra, abychom ověřili, zda j
 
 Obnovíme dialog s VUT a přeměníme bývalý vojenský areál na Kraví hoře v kreativní a umělecké centrum. Podpoříme tak komunitu, která se tam čtvrt století rozvíjí sama, vybudováním dalších ateliérů a zkušeben. Areál chceme otevřít veřejnosti a zprůchodnit pro pěší jako důležitou spojku mezi Kraví horou a Konečného náměstím. Sjednotíme a zefektivníme správu městských pozemků na Kraví hoře pod příslušné městské orgány tak, aby se současný správce, Hvězdárna a planetárium, mohl plně soustředit na svou vědecko-popularizační roli.
 
-### 11.2.6 Ateliérům Rybářská zajistíme jistotu do budoucna
-
-Ateliéry Rybářská jsou významné a nenahraditelné brněnské kulturní místo. Zajistíme jim doplňující finanční podporu a dlouhodobou nájemní smlouvu, aby jejich fungování nezáviselo na rozhodnutí každého nového vedení města. Toto místo vyjmeme z úvah o prodeji a budeme do něj investovat s ohledem na kontinuitu ojedinělého tvůrčího prostředí.
-
 ## 11.3 Přímá podpora nezávislé scény a lokálních pořadatelů
 
 Podáme pomocnou ruku malým festivalům, tvůrcům a nezávislým pořadatelům, kteří tvoří autentickou atmosféru města.
@@ -1747,7 +1743,6 @@ Každý rok také zveřejníme přehled, kolik peněz šlo do kultury a komu, v�
 - Zrekonstruovat kino Scala se zachováním jeho kulturní funkce a vybrat provozovatele ve veřejné soutěži.
 - Zajistit sanaci prostor Káznice a podpořit růst tamních aktivit bez čekání na celkovou rekonstrukci.
 - Obnovit dialog s univerzitou VUT a otevřít areál na Kraví hoře veřejnosti, zprůchodnit ho pro pěší a vybudovat další ateliéry a zkušebny.
-- Zajistit Ateliérům Rybářská dlouhodobou smlouvu a vyjmout je z úvah o prodeji.
 - Vybudovat síť komunitních center ve čtvrtích, především z budov, které město už má.
 - Zavést jeden den v měsíci s volným vstupem do městských muzeí a galerií a kulturní kredit v Brno iD.
 - Navýšit platy zaměstnanců městských kulturních organizací.
