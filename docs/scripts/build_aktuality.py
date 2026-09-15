@@ -2,7 +2,7 @@
 """Generate /aktuality/index.html — index of press releases. Run from `site/`."""
 from pathlib import Path
 
-from partials import nav_html, footer_html, closing_cta_html, person_modal_html, head_html, end_scripts_html
+from partials import nav_html, footer_html, closing_cta_html, person_modal_html, head_html, end_scripts_html, img_size_attr
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -29,7 +29,7 @@ ITEMS = [
 
 def card_html(prefix, date, title, slug, image, description=""):
     return f'''<a class="group block bg-white shadow-card" href="{prefix}{slug}">
-<img alt="{title}" class="aspect-[16/10] w-full object-cover" src="{prefix}{image}"/>
+<img alt="{title}" class="aspect-[16/10] w-full object-cover" src="{prefix}{image}"{img_size_attr(image)}/>
 <div class="p-6">
 <p class="font-name text-green-deep font-bold text-[13px] uppercase tracking-[0.14em] mb-2">{date}</p>
 <h2 class="font-name text-[20px] font-extrabold leading-[1.2] text-ink tracking-tight">{title}</h2>

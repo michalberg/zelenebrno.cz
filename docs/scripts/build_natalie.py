@@ -55,7 +55,7 @@ def build():
     main_html = f'''<section class="bg-white pt-16 pb-10 px-14 max-md:pt-10 max-md:pb-6 max-md:px-5">
 <div class="mx-auto max-w-[900px] grid grid-cols-[1fr_1.3fr] gap-12 items-start max-nav:grid-cols-1">
 <div>
-<img alt="Natálie Vencovská" class="w-full aspect-[4/5] object-cover shadow-card-lg" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-louka.jpg"/>
+<img alt="Natálie Vencovská" class="w-full aspect-[4/5] object-cover shadow-card-lg" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-louka.jpg" width="1102" height="1606"/>
 </div>
 <div>
 <p class="font-svgd text-green-deep text-[16px] mb-2">Lídryně kandidátky ZELENÉ BRNO</p>
@@ -90,7 +90,7 @@ def build():
 <p class="text-[16px] leading-[1.6] text-black/75 mb-6">Za kampaní Zelené Brno stojí celý tým lidí, kteří v Brně a jižní Moravě dělají zelenou politiku už řadu let. Bez nich by tahle kandidátka nevznikla.</p>
 <a class="btn btn-green btn-lg font-svgd" href="{prefix}kandidatka/">Celá kandidátka →</a>
 </div>
-<img alt="Natálie Vencovská s kolegyněmi" class="w-full aspect-[4/3] object-cover shadow-card-lg" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-tym.jpg"/>
+<img alt="Natálie Vencovská s kolegyněmi" class="w-full aspect-[4/3] object-cover shadow-card-lg" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-tym.jpg" width="1400" height="933"/>
 </div>
 </section>'''
 

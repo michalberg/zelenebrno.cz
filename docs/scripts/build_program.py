@@ -11,7 +11,7 @@ from parse_program import parse
 from partials import (
     nav_html, footer_html, closing_cta_html, person_modal_html,
     head_html, end_scripts_html, ICON_READ, ICON_LISTEN, ICON_ASK,
-    newsletter_widget_html, nbsp_single_letters,
+    newsletter_widget_html, nbsp_single_letters, img_size_attr,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -69,8 +69,9 @@ def chapter_card_html(prefix, ch):
     num = f"{ch['num']:02d}"
     photo = CHAPTER_PHOTOS.get(ch["slug"])
     if photo:
+        rel = f"wp-content/uploads/sites/123/2026/09/temata/{photo}"
         media = f'''<div class="relative aspect-[4/3] mb-5 -mx-8 -mt-8 max-md:-mx-6 max-md:-mt-6 overflow-hidden">
-<img alt="{ch['title']}" class="w-full h-full object-cover" src="{prefix}wp-content/uploads/sites/123/2026/09/temata/{photo}"/>
+<img alt="{ch['title']}" class="w-full h-full object-cover" src="{prefix}{rel}"{img_size_attr(rel)}/>
 </div>'''
     else:
         media = f'''<div class="pillar-placeholder -mx-8 -mt-8 max-md:-mx-6 max-md:-mt-6">
@@ -316,7 +317,7 @@ def prazdne_byty_block(prefix):
         consent_text=BYDLENI_GUIDE_CONSENT, an_url=BYDLENI_GUIDE_AN_URL, autoresponse=True,
     )
     return f'''<div class="bg-pink text-ink flex items-stretch gap-8 max-md:flex-col mb-10">
-<img alt="Kristýna Fuchsová" class="w-64 max-md:w-full max-md:h-56 object-cover shrink-0" src="{prefix}wp-content/uploads/sites/123/2026/09/kristyna-fuchsova.jpg"/>
+<img alt="Kristýna Fuchsová" class="w-64 max-md:w-full max-md:h-56 object-cover shrink-0" src="{prefix}wp-content/uploads/sites/123/2026/09/kristyna-fuchsova.jpg" width="300" height="299"/>
 <div class="py-8 pr-8 max-md:p-6 max-md:pt-0 flex-1">
 <p class="font-svgd text-ink font-black text-[14px] uppercase tracking-[0.12em] mb-2">Zdarma na e-mail</p>
 <p class="font-svgd text-ink text-[24px] leading-[1.3] max-md:text-lg mb-2">Jak v Brně žádat o byt, neudělat chybu a zvýšit svoje šance</p>

@@ -10,6 +10,7 @@ from partials import (
     nav_html, footer_html, person_modal_html, head_html, end_scripts_html,
     donate_teaser_html, newsletter_widget_html, coalition_panel_html,
     ICON_READ, ICON_LISTEN, ICON_ASK, nbsp_single_letters, jsonld_script,
+    img_size_attr,
 )
 
 ELECTION_JSONLD = {
@@ -104,12 +105,13 @@ def pillar_card_html(prefix, p):
     if p.get("extra_href"):
         extra = f'<a class="mt-3 inline-block text-[13px] font-bold text-green-deep underline underline-offset-2 hover:text-green transition" href="{p["extra_href"]}" rel="noopener" target="_blank">{p["extra_label"]} →</a>'
     if p.get("photo"):
+        rel = f"wp-content/uploads/sites/123/2026/09/temata/{p['photo']}"
         media = f'''<div class="relative aspect-[4/3] mb-5 -mx-8 -mt-8 max-md:-mx-6 max-md:-mt-6 overflow-hidden">
-<img alt="{p['title']}" class="w-full h-full object-cover" src="{prefix}wp-content/uploads/sites/123/2026/09/temata/{p['photo']}"/>
+<img alt="{p['title']}" class="w-full h-full object-cover" src="{prefix}{rel}"{img_size_attr(rel)}/>
 </div>'''
     elif p.get("photo_path"):
         media = f'''<div class="relative aspect-[4/3] mb-5 -mx-8 -mt-8 max-md:-mx-6 max-md:-mt-6 overflow-hidden">
-<img alt="{p['title']}" class="w-full h-full object-cover" src="{prefix}{p['photo_path']}"/>
+<img alt="{p['title']}" class="w-full h-full object-cover" src="{prefix}{p['photo_path']}"{img_size_attr(p['photo_path'])}/>
 </div>'''
     else:
         media = f'''<div class="pillar-placeholder -mx-8 -mt-8 max-md:-mx-6 max-md:-mt-6">
@@ -152,7 +154,7 @@ def program_teaser_html(prefix):
 
 
 def person_card_html(prefix, name, district, photo):
-    img = f'<img class="w-20 h-20 rounded-full object-cover object-[50%_25%] shadow-card" alt="{name}" src="{prefix}{photo}"/>'
+    img = f'<img class="w-20 h-20 rounded-full object-cover object-[50%_25%] shadow-card" alt="{name}" src="{prefix}{photo}"{img_size_attr(photo)}/>'
     return f'''<li class="flex flex-col items-center text-center gap-2 w-[104px]">
 {img}
 <div class="leading-tight">
@@ -195,7 +197,7 @@ def build():
 <div class="relative mx-auto max-w-[1100px] min-h-[350px] max-nav:min-h-0">
 
 <div class="max-w-[420px] min-w-0 max-nav:max-w-none max-nav:pt-0 max-nav:text-center">
-<img alt="" class="w-full max-w-[420px] mb-6 max-nav:mx-auto" src="{prefix}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png"/>
+<img alt="" class="w-full max-w-[420px] mb-6 max-nav:mx-auto" src="{prefix}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png" width="1198" height="517"/>
 <p class="font-svgd text-white text-[33px] max-md:text-[23px] leading-[1.3] max-w-[440px] max-nav:mx-auto">{nbsp_single_letters("Dobré město nedělají velká gesta, ale péče o tisíc detailů.")}</p>
 <p class="font-svgd text-green text-[18px] max-md:text-[16px] font-bold mt-4 max-nav:mx-auto">Volte Zelené Brno ve volbách 9. a 10. října.</p>
 </div>
@@ -208,7 +210,7 @@ def build():
      already uses, not a new shape. -->
 <div class="absolute top-[-80px] right-0 bottom-[-84px] w-[540px] max-nav:relative max-nav:top-0 max-nav:w-full max-nav:h-[440px] max-nav:mt-8">
 <div class="absolute inset-0 translate-x-3 translate-y-3 bg-green" aria-hidden="true"></div>
-<img alt="Natálie Vencovská" class="relative z-10 w-full h-full object-cover object-top" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-hlavni-foto.jpg"/>
+<img alt="Natálie Vencovská" class="relative z-10 w-full h-full object-cover object-top" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-hlavni-foto.jpg" width="1000" height="1250"/>
 <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-10" aria-hidden="true"></div>
 <div class="absolute left-4 bottom-[13%] z-20 leading-none">
 <div><p class="inline-block bg-pink text-ink font-name font-black text-[20px] px-4 py-2 mb-2">Natálie Vencovská</p></div>
@@ -255,7 +257,7 @@ def build():
 {coalition_panel_html(prefix)}
 </div>
 <div class="shadow-card-lg">
-<img alt="Kandidátky a kandidáti Zeleného Brna" class="w-full h-auto aspect-[2048/724] object-cover block" src="{prefix}wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-15-2-e1781014583804.jpg"/>
+<img alt="Kandidátky a kandidáti Zeleného Brna" class="w-full h-auto aspect-[2048/724] object-cover block" src="{prefix}wp-content/uploads/sites/123/2026/06/andreamyska_zeleni090626-15-2-e1781014583804.jpg" width="2048" height="724"/>
 </div>
 <p class="text-black/50 text-[13px] mt-3 text-center">Milada Blatná, Jana Drápalová, Jiří Malenovský, Ivana Fajnorová, Natálie Vencovská, Matouš Vencálek, Kristýna Fuchsová, Jasna Flamiková</p>
 </div>
@@ -272,7 +274,7 @@ def build():
 <div class="flex flex-col justify-start border-l border-white/15 pl-12 max-nav:border-l-0 max-nav:border-t max-nav:pl-0 max-nav:pt-8">
 <h2 class="font-display text-white font-black text-[32px] max-md:text-[26px] uppercase tracking-tight leading-[1.15] mb-4">Chcete pomoct i jinak než darem?</h2>
 <div class="mb-5 overflow-hidden">
-<img alt="Dobrovolník kampaně rozdává letáky" class="w-36 h-28 object-cover shadow-card float-right ml-3 mb-2" src="{prefix}wp-content/uploads/sites/123/2026/09/zapojte-se-akce.jpg"/>
+<img alt="Dobrovolník kampaně rozdává letáky" class="w-36 h-28 object-cover shadow-card float-right ml-3 mb-2" src="{prefix}wp-content/uploads/sites/123/2026/09/zapojte-se-akce.jpg" width="600" height="588"/>
 <p class="text-white/70 text-[14px] leading-[1.55]">Hodí se nám hlavně vaše energie a čas — být v ulicích na našich stráncích, mluvit s lidmi, roznášet materiály nebo se přidat na happeningy.</p>
 </div>
 <a class="btn btn-green btn-lg self-start" href="{prefix}zapoj-se/">Zapojte se do kampaně</a>

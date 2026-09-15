@@ -5,8 +5,31 @@ the site root: "" at depth 0, "../" at depth 1, "../../" at depth 2, etc.
 """
 import json
 import re
+from functools import lru_cache
+from pathlib import Path
 
 _NBSP_SINGLE_LETTER = re.compile(r"(?<![\w&])([aiksouvzAIKSOUVZ]) ")
+
+_DOCS_ROOT = Path(__file__).resolve().parent.parent
+
+
+@lru_cache(maxsize=None)
+def img_size_attr(rel_path):
+    """Return ' width="W" height="H"' for an image at rel_path (relative to
+    site/docs/, e.g. "wp-content/uploads/sites/123/2026/09/foo.jpg"), read
+    from the file's actual pixel dimensions so <img> tags carry correct
+    intrinsic size and the browser can reserve space before it loads
+    (avoids layout shift, satisfies Lighthouse's image-dimensions check).
+    Returns "" if the file is missing or not a raster format PIL can read.
+    """
+    path = _DOCS_ROOT / rel_path
+    try:
+        from PIL import Image
+        with Image.open(path) as im:
+            w, h = im.size
+    except Exception:
+        return ""
+    return f' width="{w}" height="{h}"'
 
 DEFAULT_OG_IMAGE = "https://www.zelenebrno.cz/wp-content/themes/zeleni-new/assets/img/og/default.jpg"
 
@@ -73,7 +96,7 @@ def nav_html(prefix):
 {links}
 </div>
 <div class="site-nav__cta flex items-center gap-2.5 ml-auto font-name font-normal">
-<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="44" height="44"/>
 <a class="btn btn-green" href="{p}zapoj-se/">Zapojte se do kampaně</a>
 <a class="btn btn-pink" href="{p}darujte/">Darujte</a>
 </div>
@@ -87,7 +110,7 @@ def nav_html(prefix):
 {overlay_links}
 <div class="nav-overlay__cta">
 <div class="flex items-center gap-3 mb-1">
-<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="44" height="44"/>
 <span class="font-svgd font-bold text-[15px]">Volte číslo 3</span>
 </div>
 <a class="btn btn-green" href="{p}zapoj-se/">Zapojte se do kampaně</a>
@@ -117,7 +140,7 @@ def footer_html(prefix):
 </div>
 <!-- Menu -->
 <div class="flex flex-col gap-2.5 text-[17px] leading-[1.55] font-bold">
-<img alt="Volte číslo 3" class="w-[76px] h-[76px] mb-3 max-md:mx-auto" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png"/>
+<img alt="Volte číslo 3" class="w-[76px] h-[76px] mb-3 max-md:mx-auto" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="76" height="76"/>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}program/">Program</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}kandidatka/">Kandidátka</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}natalie-vencovska/">Natálie Vencovská</a>
@@ -129,7 +152,7 @@ def footer_html(prefix):
 </div>
 <!-- Party info (fine print) -->
 <div class="text-right text-[13px] leading-[1.5] text-white/60 max-md:text-left">
-<img alt="Protože Brno má na víc" class="w-full max-w-[280px] ml-auto mb-6 max-md:ml-0" src="{p}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png"/>
+<img alt="Protože Brno má na víc" class="w-full max-w-[280px] ml-auto mb-6 max-md:ml-0" src="{p}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png" width="1198" height="517"/>
 <div class="flex gap-3 justify-end max-md:justify-start mb-6">
 <a aria-label="Facebook" class="w-[52px] h-[52px] rounded-full bg-white/10 ring-1 ring-white/20 flex items-center justify-center hover:bg-white/20 transition" href="https://www.facebook.com/zelenebrno">
 <svg aria-hidden="true" class="w-6 h-6" fill="white" viewbox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"></path></svg>
@@ -192,6 +215,8 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/img/favicon.png" rel="icon" type="image/png"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/tailwind.css" rel="stylesheet"/>
 <title>{full_title}</title>
@@ -205,7 +230,6 @@ def head_html(title, description, prefix, canonical_path, og_image=None, full_ti
 <meta property="og:url" content="https://www.zelenebrno.cz{canonical_path}"/>
 {og_image_tag}<meta name="twitter:card" content="summary_large_image"/>
 <link href="{p}wp-content/themes/zeleni-new/assets/css/styles.css" id="zeleni-main-css" media="all" rel="stylesheet"/>
-<link href="{p}wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>
 <link href="{p}aktuality/feed.xml" rel="alternate" title="Aktuality – Zelené Brno" type="application/rss+xml"/>
 {jsonld_script(ORGANIZATION_JSONLD)}
 <meta content="WordPress 7.1" name="generator"/>
@@ -277,7 +301,8 @@ COALITION_LOGOS = [
 def coalition_logos_html(prefix):
     items = "\n".join(
         f'<img alt="{name}" title="{name}" class="h-8 md:h-9 w-auto object-contain" '
-        f'src="{prefix}wp-content/uploads/sites/123/2026/09/loga-koalice/{file}"/>'
+        f'src="{prefix}wp-content/uploads/sites/123/2026/09/loga-koalice/{file}"'
+        f'{img_size_attr(f"wp-content/uploads/sites/123/2026/09/loga-koalice/{file}")}/>'
         for file, name in COALITION_LOGOS
     )
     return f'''<div class="flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -290,7 +315,8 @@ def coalition_panel_html(prefix):
     beside the team block without stretching into empty leftover space."""
     items = "\n".join(
         f'<img alt="{name}" title="{name}" class="h-10 w-auto object-contain" '
-        f'src="{prefix}wp-content/uploads/sites/123/2026/09/loga-koalice/{file}"/>'
+        f'src="{prefix}wp-content/uploads/sites/123/2026/09/loga-koalice/{file}"'
+        f'{img_size_attr(f"wp-content/uploads/sites/123/2026/09/loga-koalice/{file}")}/>'
         for file, name in COALITION_LOGOS
     )
     return f'''<div class="bg-white shadow-card p-7">

@@ -106,15 +106,29 @@ def patch_file(rel_path, description, add_closing_cta):
         )
         assert n == 1, f"robots meta anchor not found in {rel_path}"
 
-    # 4) floating-widget stylesheet (next to the main stylesheet link)
-    if "floating-widget.css" not in html:
+    # 4) floating-widget CSS is now merged into styles.css (one less render-
+    # blocking request) — strip any leftover standalone link from older runs.
+    html = re.sub(
+        r'<link href="[^"]*assets/css/floating-widget\.css" rel="stylesheet"/>\n',
+        "",
+        html,
+    )
+
+    # 4b) preconnect to the Google Fonts origins, right before the fonts
+    # stylesheet link, so the font file's own domain (fonts.gstatic.com) is
+    # resolved/connected in parallel instead of only being discovered after
+    # the stylesheet itself has downloaded.
+    if "fonts.googleapis.com\" rel=\"preconnect\"" not in html:
         html, n = re.subn(
-            r'(<link href="[^"]*assets/css/styles\.css" id="zeleni-main-css"[^>]*/>\n)',
-            lambda m: m.group(1) + f'<link href="{prefix}wp-content/themes/zeleni-new/assets/css/floating-widget.css" rel="stylesheet"/>\n',
+            r'(<link href="https://fonts\.googleapis\.com/css2\?family=Archivo)',
+            lambda m: (
+                '<link href="https://fonts.googleapis.com" rel="preconnect"/>\n'
+                '<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>\n'
+            ) + m.group(1),
             html,
             count=1,
         )
-        assert n == 1, f"styles.css anchor not found in {rel_path}"
+        assert n == 1, f"fonts.googleapis.com anchor not found in {rel_path}"
 
     # 5) floating-widget script (next to the main JS include)
     if "floating-widget.js" not in html:
