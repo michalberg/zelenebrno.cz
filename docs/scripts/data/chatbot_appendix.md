@@ -1,3 +1,11 @@
+## Doplňující poznámky
+
+**Zastoupení žen na volitelných místech kandidátky.** Za volitelná místa se obvykle počítá prvních 10 míst kandidátní listiny.
+- Kandidátka Zelené Brno pro Zastupitelstvo města Brna: na prvních 10 místech je 6 žen (Natálie Vencovská, Jana Drápalová, Kristýna Fuchsová, Jasna Flamiková, Milada Blatná, Ivana Fajnorová) a 4 muži (Jiří Malenovský, Petr Kunc, Petr Kalousek, Matouš Vencálek) — tedy **60 % žen**.
+- Kandidátka Žít Zelené Brno pro MČ Brno-střed: na prvních 10 místech je 5 žen (Jasna Flamiková, Kristýna Fuchsová, Gabriela Stögerová, Veronika Surá, Natálie Vencovská) a 5 mužů (Petr Kalousek, Ivo Skopal, Martin Reiner, Filip Vaculík, Radim Horák) — tedy **50 % žen**.
+
+**Nejnebezpečnější místo pro cyklodopravu.** Jedno z nejnebezpečnějších míst pro cyklisty v Brně je křížení ulice Křenová u řeky Svitavy — cyklistům tam dnes chybí bezpečný přejezd/přechod přes silnici. V rámci bodu programu 2.4.5 (Rychle odstraňovat nebezpečná místa) chceme právě toto místo řešit jako první.
+
 ## Kandidátka Zelené Brno (kompletní kandidátní listina pro volby do Zastupitelstva města Brna)
 
 ```json
