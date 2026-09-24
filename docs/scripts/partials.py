@@ -207,7 +207,7 @@ def person_modal_html(prefix):
 
 def head_html(title, description, prefix, canonical_path, og_image=None, full_title=None):
     p = prefix
-    full_title = full_title or f"Zelené Brno – {title}"
+    full_title = (full_title or f"Zelené Brno – {title}") + " - Komunální volby Brno 2026"
     og_image = og_image or DEFAULT_OG_IMAGE
     og_image_tag = f'<meta property="og:image" content="{og_image}"/>\n'
     return f'''<meta charset="utf-8"/>
