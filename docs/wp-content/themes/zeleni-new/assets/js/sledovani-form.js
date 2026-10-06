@@ -1,8 +1,7 @@
 /* RSVP for the election-night results watch party on /sledovani.
    Posts into the same Action Network volunteer form as newsletter-form.js
    (autoresponse disabled), tagged web-sledovani; probability and arrival
-   time go into custom_fields. Ticking the "napíšu 5 lidem" pledge adds the
-   tag sledovani-slib-5 so a Friday reminder can target it. */
+   time go into custom_fields, as does the "napíšu 5 lidem" pledge. */
 (function () {
   "use strict";
 
@@ -66,7 +65,7 @@
               sledovani_slib_5_lidi: pledged ? "ano" : "ne",
             },
           },
-          add_tags: pledged ? [tag, "sledovani-slib-5"] : [tag],
+          add_tags: [tag],
           triggers: { autoresponse: { enabled: false } },
         }),
       })
