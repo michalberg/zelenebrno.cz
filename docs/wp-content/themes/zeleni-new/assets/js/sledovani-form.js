@@ -74,6 +74,7 @@
           form.hidden = true;
           success.hidden = false;
           success.querySelector("[data-rsvp-success-pledge]").hidden = !pledged;
+          window.scrollTo({ top: 0, behavior: "smooth" });
           if (window.umami) window.umami.track("sledovani-submit", { pravdepodobnost: probability, cas: arrival, slib: pledged });
         })
         .catch(function (err) {
