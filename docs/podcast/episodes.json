@@ -8,9 +8,9 @@
     "explicit": false,
     "category": "News",
     "subcategory": "Politics",
-    "base_url": "https://zelenebrno.cz/podcast/",
+    "base_url": "https://www.zelenebrno.cz/podcast/",
     "cover_image": "cover.png",
-    "link": "https://zelenebrno.cz/"
+    "link": "https://www.zelenebrno.cz/"
   },
   "episodes": [
     {
