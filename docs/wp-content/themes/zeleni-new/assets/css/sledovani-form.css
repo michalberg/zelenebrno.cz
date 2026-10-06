@@ -1,0 +1,46 @@
+/* RSVP form on /sledovani (election-night results watch party). */
+.zb-rsvp { max-width: 560px; }
+.zb-rsvp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.zb-rsvp-field { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; }
+.zb-rsvp-field--full { grid-column: 1 / -1; }
+.zb-rsvp-field input {
+  padding: 13px 16px;
+  border-radius: 4px;
+  border: 2px solid #ddeee2;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Archivo', sans-serif;
+  outline: none;
+  color: #000;
+  background: #fff;
+  transition: border-color .15s ease;
+}
+.zb-rsvp-field input:focus { border-color: var(--color-green); }
+.zb-rsvp-group { border: 0; padding: 0; margin: 24px 0 0; }
+.zb-rsvp-group legend { font-weight: 700; font-size: 15px; margin-bottom: 10px; padding: 0; }
+.zb-rsvp-group label { display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 6px; cursor: pointer; }
+.zb-rsvp-group input { accent-color: var(--color-green); width: 16px; height: 16px; margin: 0; }
+.zb-rsvp-times { display: flex; flex-wrap: wrap; gap: 8px; }
+.zb-rsvp-times label {
+  margin: 0;
+  padding: 8px 14px;
+  border: 2px solid #ddeee2;
+  border-radius: 4px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.zb-rsvp-times label:has(input:checked) { border-color: var(--color-green); background: #effaf3; }
+.zb-rsvp-error { display: none; font-size: 14px; color: #d3273e; margin-top: 12px; }
+.zb-rsvp-error.is-visible { display: block; }
+.zb-rsvp-success { font-size: 17px; font-weight: 700; color: #06A856; }
+@media (max-width: 640px) { .zb-rsvp-grid { grid-template-columns: 1fr; } }
+
+/* "Napíšu 5 lidem" pledge box with sample message */
+.zb-pledge { margin-top: 28px; padding: 20px; background: #FFE3F1; border-left: 4px solid #FFA6D1; border-radius: 4px; }
+.zb-pledge-check { display: flex; align-items: flex-start; gap: 10px; font-weight: 800; font-size: 17px; line-height: 1.35; cursor: pointer; }
+.zb-pledge-check input { margin-top: 3px; flex-shrink: 0; accent-color: var(--color-green); width: 20px; height: 20px; }
+.zb-pledge-hint { font-size: 14px; margin: 12px 0 8px; }
+.zb-pledge-msg { margin: 0; padding: 12px 14px; background: #fff; border-radius: 4px; font-size: 15px; line-height: 1.45; font-style: normal; }
+.zb-pledge-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.zb-pledge-wa { background: #25D366; color: #fff; }
+.zb-pledge-wa:hover { filter: brightness(.93); }
+.zb-rsvp-success-pledge { margin-top: 10px; color: #022815; }

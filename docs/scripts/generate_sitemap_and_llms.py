@@ -40,6 +40,7 @@ ALL_PAGES = [
     "mestske-casti",
     "jak-volit",
     "prochazky",
+    "sledovani",
     "zapoj-se",
     "darujte",
     "komise",
@@ -119,6 +120,7 @@ Volební program „Brno do detailu" po kapitolách:
 {line("zapoj-se")}
 {line("darujte")}
 {line("prochazky")}
+{line("sledovani")}
 
 ## Aktuality
 
