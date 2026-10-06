@@ -1,6 +1,6 @@
 /* RSVP for the election-night results watch party on /sledovani.
    Posts into the same Action Network volunteer form as newsletter-form.js
-   (autoresponse disabled), tagged web-sledovani; probability and arrival
+   (autoresponse disabled), tagged brno-sledovani; probability and arrival
    time go into custom_fields, as does the "napíšu 5 lidem" pledge. */
 (function () {
   "use strict";
@@ -21,7 +21,7 @@
     var error = root.querySelector("[data-rsvp-error]");
     var honeypot = root.querySelector("[data-rsvp-hp]");
     var submitBtn = root.querySelector("[data-rsvp-submit]");
-    var tag = root.getAttribute("data-tag") || "web-sledovani";
+    var tag = root.getAttribute("data-tag") || "brno-sledovani";
     if (!form) return;
     var originalText = submitBtn.textContent;
     initPledge(root);
