@@ -41,6 +41,7 @@ ALL_PAGES = [
     "jak-volit",
     "prochazky",
     "sledovani",
+    "vasi-lide",
     "zapoj-se",
     "darujte",
     "komise",
@@ -121,6 +122,7 @@ Volební program „Brno do detailu" po kapitolách:
 {line("darujte")}
 {line("prochazky")}
 {line("sledovani")}
+{line("vasi-lide")}
 
 ## Aktuality
 

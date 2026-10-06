@@ -1,0 +1,88 @@
+/* /vasi-lide: four-step guide with a "25 lidí" checklist (stored in the
+   browser only) and a print layout that outputs just the checklist. */
+.zb-people-lead { margin-bottom: 8px; }
+.zb-step { margin-top: 48px; }
+.zb-step-title { display: flex; align-items: center; gap: 14px; font-family: 'Urban Grotesk', Archivo, system-ui, sans-serif; font-weight: 900; font-size: 28px; line-height: 1.15; margin: 0 0 14px; color: #022815; }
+.zb-step-num { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #0BD26F; color: #022815; font-size: 22px; }
+.zb-step-text, .zb-step-text p { font-size: 17px; line-height: 1.5; margin: 0 0 10px; }
+.zb-step-aside { font-size: 15px !important; }
+.zb-step a, .zb-step-aside a { text-decoration: underline; text-underline-offset: 2px; }
+.zb-step-list { margin: 0 0 16px; padding-left: 20px; font-size: 17px; line-height: 1.5; list-style: disc; }
+.zb-step-list li { margin-bottom: 8px; }
+.zb-msg { margin: 0; padding: 14px 16px; background: #FFE3F1; border-left: 4px solid #FFA6D1; border-radius: 4px; font-size: 16px; line-height: 1.45; font-style: normal; }
+.zb-msg-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.zb-wa { background: #25D366; color: #fff; }
+.zb-wa:hover { filter: brightness(.93); }
+
+.zb-people-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.zb-people-title { font-family: 'Urban Grotesk', Archivo, system-ui, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.15; margin: 0; color: #022815; }
+.zb-progress { font-weight: 800; font-size: 16px; color: #06A856; margin: 0; }
+.zb-progress--big { font-size: 22px; }
+.zb-progress-bar { height: 8px; background: #ddeee2; border-radius: 4px; margin: 10px 0 12px; overflow: hidden; }
+.zb-progress-bar span { display: block; height: 100%; width: 0; background: #0BD26F; transition: width .25s ease; }
+.zb-people-note { font-size: 13px; color: rgba(0,0,0,.6); margin: 0; }
+.zb-people-group { border: 0; padding: 0; margin: 28px 0 0; }
+.zb-people-group legend { font-weight: 800; font-size: 18px; padding: 0; color: #104f2d; }
+.zb-people-hint { font-size: 14px; color: rgba(0,0,0,.65); margin: 2px 0 6px; }
+.zb-row { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #ddeee2; transition: border-color .15s ease; }
+.zb-row:focus-within { border-bottom-color: var(--color-green); }
+.zb-row-check { flex-shrink: 0; width: 22px; height: 22px; margin: 0; accent-color: var(--color-green); cursor: pointer; }
+.zb-row-name { flex: 1; min-width: 0; padding: 10px 2px; border: 0; background: transparent; font-size: 16px; font-family: 'Archivo', sans-serif; color: #000; outline: none; }
+.zb-row.is-done .zb-row-name { color: rgba(0,0,0,.45); text-decoration: line-through; }
+.zb-row-wa { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #25D366; color: #fff; }
+.zb-row-wa:hover { filter: brightness(.93); }
+.zb-row-wa svg { width: 18px; height: 18px; }
+.zb-row-wa[aria-disabled="true"] { opacity: .3; pointer-events: none; }
+.zb-people-add { margin-top: 8px; background: none; border: 0; padding: 4px 0; font-size: 14px; font-weight: 700; color: #06A856; cursor: pointer; }
+.zb-people-add:hover { text-decoration: underline; }
+.zb-people-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 32px; }
+.zb-people-clear { background: none; border: 0; padding: 0; font-size: 14px; color: rgba(0,0,0,.6); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.zb-people-clear:hover { color: #d3273e; }
+.zb-print-only { display: none; }
+
+@media (max-width: 640px) {
+  .zb-step-title { font-size: 23px; gap: 10px; }
+  .zb-step-num { width: 36px; height: 36px; font-size: 18px; }
+}
+
+@media print {
+  /* Print only the checklist; @page margins plus wrapper padding so it keeps
+     margins even when the print dialog is set to "no margins". */
+  @page { size: A4; margin: 10mm; }
+  html, body { background: #fff !important; }
+  .site-nav, .nav-overlay, footer, .person-modal, .zbw,
+  .site-main h1, .zb-people-lead, .zb-step-title, .zb-step-text, .zb-screen-only,
+  .zb-row-wa, .zb-people-add, .zb-step:not([data-people-form]) { display: none !important; }
+  .zb-print-only { display: block; }
+  /* main.js fades in section children on scroll; force them visible in print */
+  .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  body, .site-main, .site-main > section { padding: 0 !important; margin: 0 !important; min-height: 0 !important; }
+  .site-main section > div { max-width: none !important; }
+  .zb-step { margin: 0 !important; }
+  .zb-people { box-shadow: none !important; padding: 2mm 8mm 0 !important; margin: 0 !important; }
+  .zb-people-title { font-size: 20pt; }
+  .zb-people-group { margin-top: 4mm; break-inside: avoid; }
+  .zb-people-group legend { font-size: 12pt; color: #000; }
+  .zb-people-hint { font-size: 9.5pt; margin: 0; }
+  .zb-row { border-bottom: 1px solid #000; gap: 3mm; }
+  .zb-row-check { width: 3.5mm; height: 3.5mm; }
+  .zb-row-name { padding: 1mm 1mm 0.5mm; font-size: 11pt; height: 7mm; }
+  .zb-row.is-done .zb-row-name { color: #000; text-decoration: none; }
+}
+
+/* Overview of the four steps + privacy note, shown before the checklist */
+.zb-overview { margin-top: 20px; padding: 24px; background: #effaf3; border-radius: 6px; }
+.zb-overview-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.zb-overview-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.45; }
+.zb-overview-list .zb-step-num { width: 32px; height: 32px; font-size: 16px; font-weight: 900; margin-top: -3px; }
+.zb-privacy { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0 0; padding-top: 16px; border-top: 1px solid #cfe9d8; font-size: 15px; line-height: 1.45; color: #104f2d; }
+.zb-privacy svg { flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; }
+@media print { .zb-overview { display: none !important; } }
+
+/* Supporter / candidate message switch; the message itself is editable */
+.zb-msg-switch { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-bottom: 10px; background: #f1f1f1; border-radius: 6px; }
+.zb-msg-switch button { padding: 8px 14px; border: 0; border-radius: 4px; background: transparent; font-size: 15px; font-weight: 700; color: rgba(0,0,0,.65); cursor: pointer; }
+.zb-msg-switch button.is-active { background: #fff; color: #022815; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+textarea.zb-msg { display: block; width: 100%; resize: vertical; font-family: 'Archivo', sans-serif; color: #000; outline: none; }
+textarea.zb-msg:focus { border-left-color: #FF7DBE; }
+.zb-msg-hint { font-size: 13px; color: rgba(0,0,0,.6); margin: 6px 0 0; }
