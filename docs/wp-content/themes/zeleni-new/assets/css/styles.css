@@ -1203,7 +1203,7 @@ html.program-chat-open { overflow: hidden; }
 }
 /* Clear the footer's social icons / links instead of sitting on top of them. */
 .zbw.is-above-footer { bottom: 132px; }
-.zbw.is-suppressed { opacity: 0 !important; pointer-events: none !important; }
+.zbw.is-suppressed:not(.is-open) { opacity: 0 !important; pointer-events: none !important; }
 
 /* Closed state: pill */
 .zbw-pill {

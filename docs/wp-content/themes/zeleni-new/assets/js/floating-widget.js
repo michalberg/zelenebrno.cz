@@ -85,6 +85,8 @@
 
   function init() {
     if (ls(DISMISS_KEY) || ls(SUBMITTED_KEY)) return;
+    // Not on /darujte/: the full donation form is the one ask there.
+    if (document.querySelector("[data-donate-form]")) return;
 
     var el = buildMarkup();
     document.body.appendChild(el);
@@ -115,11 +117,10 @@
       footerObserver.observe(footer);
     }
 
-    // Don't compete with another ask (donate / newsletter form) that's
-    // already on screen — hide until the visitor scrolls past it.
-    var busyEls = document.querySelectorAll(
-      "[data-donate-form], [data-donate-teaser], [data-newsletter-form]"
-    );
+    // The collapsed pill hides while the inline newsletter box is on screen
+    // (same sign-up twice). An open panel never hides — the visitor may be
+    // typing into it (see .is-suppressed in styles.css).
+    var busyEls = document.querySelectorAll("[data-newsletter-form]");
     if (busyEls.length && window.IntersectionObserver) {
       var busySet = new Set();
       var busyObserver = new IntersectionObserver(

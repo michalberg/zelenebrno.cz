@@ -231,7 +231,6 @@
           show("[data-success-month-text]", monthly);
           show("[data-success-month-note]", monthly);
           show("[data-success-freq-row]", monthly);
-          show("[data-success-msg-row]", monthly);
           show("[data-success-qr-wrap]", !monthly);
           success.classList.toggle("is-monthly", monthly);
 
@@ -241,7 +240,7 @@
 
           if (!monthly) {
             var ibanCompact = BANK_IBAN.replace(/\s+/g, "");
-            var spayd = "SPD*1.0*ACC:" + ibanCompact + "*AM:" + amount + ".00*CC:CZK*X-VS:" + data.vs + "*MSG:DAR";
+            var spayd = "SPD*1.0*ACC:" + ibanCompact + "*AM:" + amount + ".00*CC:CZK*X-VS:" + data.vs + "*MSG:DAR PRO BRNO";
             var qrImg = success.querySelector("[data-success-qr]");
             if (qrImg) {
               qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=4&data=" + encodeURIComponent(spayd);
