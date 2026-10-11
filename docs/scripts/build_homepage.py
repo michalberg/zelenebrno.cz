@@ -199,7 +199,7 @@ def build():
 <div class="max-w-[420px] min-w-0 max-nav:max-w-none max-nav:pt-0 max-nav:text-center">
 <img alt="" class="w-full max-w-[420px] mb-6 max-nav:mx-auto" src="{prefix}wp-content/uploads/sites/123/2026/09/protoze-brno-ma-na-vic.png" width="1198" height="517"/>
 <p class="font-svgd text-white text-[33px] max-md:text-[23px] leading-[1.3] max-w-[440px] max-nav:mx-auto">{nbsp_single_letters("Dobré město nedělají velká gesta, ale péče o tisíc detailů.")}</p>
-<p class="font-svgd text-green text-[18px] max-md:text-[16px] font-bold mt-4 max-nav:mx-auto">Volte Zelené Brno ve volbách 9. a 10. října.</p>
+<p class="font-svgd text-green text-[18px] max-md:text-[16px] font-bold mt-4 max-nav:mx-auto">Díky vám má Brno na víc.</p>
 </div>
 
 <!-- Photo is absolutely placed against this same centered wrapper (not the

@@ -42,7 +42,7 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           person: { email_addresses: [{ address: email, status: "subscribed" }] },
-          add_tags: [tag],
+          add_tags: [tag, "brno-vsichni"],
           triggers: { autoresponse: { enabled: autoresponse } },
         }),
       })

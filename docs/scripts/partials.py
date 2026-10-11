@@ -70,8 +70,9 @@ NAV_LINKS = [
     ("kandidatka/", "Kandidátka"),
     ("natalie-vencovska/", "Natálie Vencovská"),
     ("mestske-casti/", "Městské části"),
-    ("jak-volit/", "Jak volit"),
-    ("prochazky/", "Procházky"),
+    # DOČASNĚ VYPNUTO po volbách:
+    # ("jak-volit/", "Jak volit"),
+    # ("prochazky/", "Procházky"),
 ]
 
 
@@ -96,8 +97,7 @@ def nav_html(prefix):
 {links}
 </div>
 <div class="site-nav__cta flex items-center gap-2.5 ml-auto font-name font-normal">
-<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="44" height="44"/>
-<a class="btn btn-green" href="{p}zapoj-se/">Zapojte se do kampaně</a>
+<a class="btn btn-green" href="{p}zapoj-se/">Zapojte se</a>
 <a class="btn btn-pink" href="{p}darujte/">Darujte</a>
 </div>
 <button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle="">
@@ -109,11 +109,7 @@ def nav_html(prefix):
 <div class="nav-overlay__panel">
 {overlay_links}
 <div class="nav-overlay__cta">
-<div class="flex items-center gap-3 mb-1">
-<img alt="Volte číslo 3" class="site-nav__ballot" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="44" height="44"/>
-<span class="font-svgd font-bold text-[15px]">Volte číslo 3</span>
-</div>
-<a class="btn btn-green" href="{p}zapoj-se/">Zapojte se do kampaně</a>
+<a class="btn btn-green" href="{p}zapoj-se/">Zapojte se</a>
 <a class="btn btn-pink" href="{p}darujte/">Darujte</a>
 </div>
 </div>
@@ -125,7 +121,7 @@ def footer_html(prefix):
     return f'''<!-- Footer -->
 <footer class="text-white pb-16 max-md:pb-12 bg-[#025B58]">
 <div class="max-w-container mx-auto px-14 max-md:px-5 mb-10 pt-8 pb-8 max-md:pt-6 max-md:pb-6 border-b border-white/15 text-center">
-<p class="font-svgd text-green text-[22px] max-md:text-[18px] font-bold">Volte Zelené Brno ve volbách 9. a 10. října.</p>
+<p class="font-svgd text-green text-[22px] max-md:text-[18px] font-bold">Díky vám má Brno na víc.</p>
 </div>
 <div class="max-w-container mx-auto px-14 grid grid-cols-[1fr_1fr_1fr] gap-12 items-start max-md:grid-cols-1 max-md:gap-9 max-md:px-5 max-md:text-left">
 <!-- Brand and contacts -->
@@ -140,13 +136,12 @@ def footer_html(prefix):
 </div>
 <!-- Menu -->
 <div class="flex flex-col gap-2.5 text-[17px] leading-[1.55] font-bold">
-<img alt="Volte číslo 3" class="w-[76px] h-[76px] mb-3 max-md:mx-auto" src="{p}wp-content/uploads/sites/123/2026/09/volte-3-odznak.png" width="76" height="76"/>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}program/">Program</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}kandidatka/">Kandidátka</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}natalie-vencovska/">Natálie Vencovská</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}mestske-casti/">Městské části</a>
-<a class="block underline underline-offset-2 hover:text-pink transition" href="{p}jak-volit/">Jak volit</a>
-<a class="block underline underline-offset-2 hover:text-pink transition" href="{p}prochazky/">Procházky</a>
+<!-- DOČASNĚ VYPNUTO: <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}jak-volit/">Jak volit</a> -->
+<!-- DOČASNĚ VYPNUTO: <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}prochazky/">Procházky</a> -->
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}zapoj-se/">Zapoj se</a>
 <a class="block underline underline-offset-2 hover:text-pink transition" href="{p}aktuality/">Aktuality</a>
 </div>

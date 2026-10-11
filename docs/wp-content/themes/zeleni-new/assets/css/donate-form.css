@@ -4,6 +4,21 @@
 .zb-donate { max-width: 100%; }
 .zb-donate-teaser { max-width: 640px; }
 .zb-donate-teaser .zb-donate-amounts { margin-bottom: 16px; }
+/* Monthly / one-off switch (segmented control) */
+.zb-freq { display: inline-flex; padding: 4px; gap: 4px; border-radius: 999px; background: #eef7f0; margin-bottom: 16px; }
+.zb-freq-btn {
+  padding: 8px 18px; border-radius: 999px; border: 0; background: transparent;
+  font-size: 15px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #333; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.zb-freq-btn:hover { color: #000; }
+.zb-freq-btn.is-selected { background: var(--color-green); color: #000; }
+.bg-ink .zb-freq { background: rgba(255,255,255,0.1); }
+.bg-ink .zb-freq-btn { color: rgba(255,255,255,0.75); }
+.bg-ink .zb-freq-btn:hover { color: #fff; }
+.bg-ink .zb-freq-btn.is-selected { color: #000; }
+.zb-donate-success.is-monthly .zb-payment-grid { grid-template-columns: 1fr; }
+
 .zb-donate-amounts { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; align-items: center; }
 .zb-amount-btn {
   padding: 9px 16px; border-radius: 4px; border: 2px solid #d5eed8;
@@ -43,7 +58,7 @@
 .zb-legal a { color: #067a40; text-decoration: underline; }
 .zb-legal a:hover { color: #0bd26f; }
 
-.zb-donate-success { max-width: 640px; }
+.zb-donate-success { max-width: 640px; scroll-margin-top: 120px; }
 .zb-donate-success h3 { font-family: 'Tusker Grotesk', 'Tusker Grotesk SemiBold', Archivo, sans-serif; text-transform: uppercase; font-size: 28px; margin-bottom: 10px; }
 .zb-donate-success > p { margin-bottom: 20px; font-size: 16px; }
 .zb-payment-grid {
@@ -70,3 +85,4 @@
 .bg-ink .zb-submit-note { color: rgba(255,255,255,0.7); }
 .bg-ink .zb-legal { color: rgba(255,255,255,0.55); }
 .bg-ink .zb-legal a { color: var(--color-pink-hot, #FF7DBE); }
+.zb-donate-success [hidden] { display: none !important; }

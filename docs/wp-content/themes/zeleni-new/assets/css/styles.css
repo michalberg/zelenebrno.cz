@@ -1308,6 +1308,20 @@ html.program-chat-open { overflow: hidden; }
   color: rgba(0,0,0,0.65);
 }
 .zbw-panel__author strong { color: var(--color-ink); }
+.zbw-panel__author img { width: 52px; height: 52px; }
+.zbw-panel__title { margin-bottom: 8px; }
+.zbw-panel__text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(0,0,0,0.75);
+  margin: 0 0 16px;
+}
+.zbw-reassure {
+  font-size: 12px;
+  color: rgba(0,0,0,0.5);
+  text-align: center;
+  margin: 8px 0 0;
+}
 
 .zbw-field { margin-bottom: 10px; }
 .zbw-field input[type="email"] {

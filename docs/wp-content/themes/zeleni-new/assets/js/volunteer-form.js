@@ -30,7 +30,8 @@
       var phone = form.querySelector("[data-vf-phone]").value.trim();
       var district = form.querySelector("[data-vf-district]").value.trim();
       var help = form.querySelector("[data-vf-help]").value.trim();
-      var time = form.querySelector("[data-vf-time]").value.trim();
+      var timeEl = form.querySelector("[data-vf-time]");
+      var time = timeEl ? timeEl.value.trim() : "";
 
       if (!firstName || !lastName || !email || !emailRegex.test(email)) {
         error.classList.add("is-visible");
@@ -59,7 +60,7 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           person: person,
-          add_tags: ["brno_kampan"],
+          add_tags: ["brno_kampan", "brno-vsichni"],
         }),
       })
         .then(function (resp) {

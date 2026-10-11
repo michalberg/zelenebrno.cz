@@ -1,22 +1,24 @@
-/* Floating lead-gen widget (Track A, sitewide) — bydlení campaign.
+/* Floating newsletter widget (sitewide, post-election).
    Builds its own markup and injects it before </body> on every page, so no
-   page template needs to carry it by hand. Reuses the same Action Network
-   submission pattern as prazdnebytybrno.cz (public form endpoint, honeypot,
-   consent checkbox), tagged "web-bydleni-popup" to distinguish it from the
-   inline sign-up on the /program bydlení chapter. */
+   page template needs to carry it by hand. Posts into the same Action Network
+   form and tag as the inline newsletter box (newsletter-form.js), so contacts
+   end up in one list. Opens by itself after a few seconds or once the visitor
+   scrolls a bit; on later pages of the same visit it stays a collapsed pill. */
 (function () {
   "use strict";
 
   var CONFIG = {
     anSubmissionUrl:
-      "https://actionnetwork.org/api/v2/forms/da64edd7-46a2-44c0-9b5e-3e9b9a8e3f9d/submissions/",
-    tag: "web-bydleni-popup",
-    avatarSrc: "/wp-content/uploads/sites/123/2026/09/kristyna-fuchsova.jpg",
+      "https://actionnetwork.org/api/v2/forms/396d43a2-696d-4c38-969f-9af48e107597/submissions/",
+    tag: "brno_newsletter",
+    avatarSrc: "/wp-content/uploads/sites/123/2026/09/natalie-avatar.jpg",
+    delayMs: 6000,
+    scrollRatio: 0.3,
   };
 
-  var DISMISS_KEY = "zbw_bydleni_dismissed_v1";
-  var SUBMITTED_KEY = "zbw_bydleni_submitted_v1";
-  var SEEN_KEY = "zbw_bydleni_seen_v1";
+  var DISMISS_KEY = "zbw_newsletter_dismissed_v1";
+  var SUBMITTED_KEY = "zbw_newsletter_submitted_v1";
+  var SEEN_KEY = "zbw_newsletter_seen_v1";
 
   var emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
@@ -40,8 +42,8 @@
     wrap.setAttribute("data-zbw", "");
     wrap.innerHTML =
       '<div class="zbw-pill-wrap">' +
-        '<button type="button" class="zbw-pill" data-zbw-open aria-label="Otevřít: Chcete zvýšit šanci na městský byt? Zdarma poradíme">' +
-          '<span class="zbw-pill__text">CHCETE ZVÝŠIT ŠANCI NA<br>MĚSTSKÝ BYT? <span class="zbw-accent">ZDARMA PORADÍME</span></span>' +
+        '<button type="button" class="zbw-pill" data-zbw-open aria-label="Otevřít: Zůstaňme v kontaktu">' +
+          '<span class="zbw-pill__text">ZŮSTAŇME<br><span class="zbw-accent">V KONTAKTU</span></span>' +
         '</button>' +
         '<button type="button" class="zbw-close" data-zbw-dismiss aria-label="Zavřít">' +
           '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
@@ -52,29 +54,30 @@
           '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
         '</button>' +
         '<div class="zbw-form">' +
-          '<p class="zbw-panel__kicker">Zdarma na e-mail</p>' +
-          '<h3 class="zbw-panel__title">Jak v Brně žádat o byt, neudělat chybu a zvýšit svoje šance</h3>' +
           '<div class="zbw-panel__author">' +
             '<img src="' + CONFIG.avatarSrc + '" alt="" width="40" height="40">' +
-            '<span>Praktický průvodce od <strong>Kristýny Fuchsové</strong></span>' +
+            '<span><strong>Natálie Vencovská</strong><br>zastupitelka města Brna</span>' +
           '</div>' +
+          '<h3 class="zbw-panel__title">Zůstaňme v kontaktu</h3>' +
+          '<p class="zbw-panel__text">Díky vám je nás v zastupitelstvu dvakrát víc. Budu vám psát, co se nám daří prosadit, o čem se v Brně rozhoduje a kdy se můžeme potkat.</p>' +
           '<form novalidate>' +
             '<div class="zbw-hp" aria-hidden="true"><label>Nevyplňujte, pokud jste člověk<input type="text" name="website" tabindex="-1" autocomplete="off" data-zbw-hp></label></div>' +
             '<div class="zbw-field">' +
-              '<input type="email" name="email" placeholder="Váš e-mail" required autocomplete="email" data-zbw-email>' +
+              '<input type="email" name="email" placeholder="vas@email.cz" aria-label="Váš e-mail" required autocomplete="email" data-zbw-email>' +
             '</div>' +
             '<p class="zbw-error" data-zbw-email-error>Zadejte prosím platný e-mail.</p>' +
             '<label class="zbw-consent">' +
               '<input type="checkbox" data-zbw-consent>' +
-              '<span>Souhlasím se zpracováním e-mailu za účelem zaslání průvodce a informací o kampani Zelené Brno. Souhlas lze kdykoli odvolat, viz <a href="https://www.zeleni.cz/ochrana-osobnich-udaju/" target="_blank" rel="noopener">zásady zpracování údajů</a>.</span>' +
+              '<span>Souhlasím se zasíláním zpráv a pozvánek brněnských Zelených. <a href="https://www.zeleni.cz/ochrana-osobnich-udaju/" target="_blank" rel="noopener">Jak s údaji zacházíme</a></span>' +
             '</label>' +
             '<p class="zbw-error" data-zbw-consent-error>Pro odeslání je potřeba zaškrtnout souhlas.</p>' +
-            '<button type="submit" class="zbw-submit" data-zbw-submit>Poslat mi průvodce</button>' +
+            '<button type="submit" class="zbw-submit" data-zbw-submit>Chci vědět, co se děje</button>' +
+          '<p class="zbw-reassure">Žádný spam. Odhlásit se můžete jedním kliknutím.</p>' +
           '</form>' +
         '</div>' +
         '<div class="zbw-success">' +
-          '<h3>Hotovo!</h3>' +
-          '<p>Průvodce vám dorazí na e-mail během pár minut.</p>' +
+          '<h3>Děkuju!</h3>' +
+          '<p>Jste na seznamu. Brzy se vám ozvu. Natálie</p>' +
         '</div>' +
       '</div>';
     return wrap;
@@ -181,26 +184,27 @@
           person: {
             email_addresses: [{ address: emailInput.value.trim(), status: "subscribed" }],
           },
-          add_tags: [CONFIG.tag],
-          triggers: { autoresponse: { enabled: true } },
+          add_tags: [CONFIG.tag, "brno-vsichni"],
+          triggers: { autoresponse: { enabled: false } },
         }),
       })
         .then(function (resp) {
           if (!resp.ok) throw new Error("HTTP " + resp.status);
           el.classList.add("is-submitted");
           setLs(SUBMITTED_KEY, "1");
-          if (window.umami) window.umami.track("housing-guide-submit", { tag: CONFIG.tag });
+          if (window.umami) window.umami.track("newsletter-popup-submit", { tag: CONFIG.tag });
         })
         .catch(function (err) {
           console.error("Floating widget submit error:", err);
           submitBtn.disabled = false;
-          submitBtn.textContent = "Poslat mi průvodce";
+          submitBtn.textContent = "Chci vědět, co se děje";
           emailError.textContent = "Něco se nepovedlo, zkuste to prosím znovu.";
           emailError.classList.add("is-visible");
         });
     });
 
-    // Discover: once per visit, on ~55% scroll or ~25s, whichever comes first.
+    // Discover: once per visit, opened, after a few seconds or a short scroll,
+    // whichever comes first. Later pages of the visit show just the pill.
     if (ss(SEEN_KEY)) {
       reveal();
       return;
@@ -212,16 +216,17 @@
       triggered = true;
       setSs(SEEN_KEY, "1");
       reveal();
+      open();
       window.removeEventListener("scroll", onScroll);
       clearTimeout(timer);
     }
     function onScroll() {
       var scrolled = window.scrollY || document.documentElement.scrollTop;
       var max = document.documentElement.scrollHeight - window.innerHeight;
-      if (max > 0 && scrolled / max >= 0.55) trigger();
+      if (max > 0 && scrolled / max >= CONFIG.scrollRatio) trigger();
     }
     window.addEventListener("scroll", onScroll, { passive: true });
-    var timer = setTimeout(trigger, 25000);
+    var timer = setTimeout(trigger, CONFIG.delayMs);
   }
 
   if (document.readyState === "loading") {

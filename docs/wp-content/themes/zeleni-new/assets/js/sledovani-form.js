@@ -65,7 +65,7 @@
               sledovani_slib_5_lidi: pledged ? "ano" : "ne",
             },
           },
-          add_tags: [tag],
+          add_tags: [tag, "brno-vsichni"],
           triggers: { autoresponse: { enabled: false } },
         }),
       })
