@@ -12,7 +12,7 @@ PERSON_JSONLD = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Natálie Vencovská",
-    "jobTitle": "Lídryně kandidátky Zelené Brno",
+    "jobTitle": "Zastupitelka města Brna",
     "url": "https://www.zelenebrno.cz/natalie-vencovska/",
     "image": "https://www.zelenebrno.cz/wp-content/uploads/sites/123/2026/09/natalie-hlavni-foto.jpg",
     "affiliation": {"@type": "Organization", "name": "Zelené Brno", "url": "https://www.zelenebrno.cz/"},
@@ -20,7 +20,7 @@ PERSON_JSONLD = {
 
 ROOT = Path(__file__).resolve().parent.parent
 
-DESCRIPTION = ("Natálie Vencovská, lídryně kandidátky koalice Zelené Brno do komunálních voleb 2026 — "
+DESCRIPTION = ("Natálie Vencovská, zastupitelka města Brna za Zelené Brno — "
                "designérka a odbornice na veřejný prostor.")
 
 CV = [
@@ -58,7 +58,7 @@ def build():
 <img alt="Natálie Vencovská" class="w-full aspect-[4/5] object-cover shadow-card-lg" src="{prefix}wp-content/uploads/sites/123/2026/09/natalie-louka.jpg" width="1102" height="1606"/>
 </div>
 <div>
-<p class="font-svgd text-green-deep text-[16px] mb-2">Lídryně kandidátky ZELENÉ BRNO</p>
+<p class="font-svgd text-green-deep text-[16px] mb-2">Zastupitelka města Brna</p>
 <h1 class="font-display text-ink font-black text-[48px] max-md:text-4xl uppercase tracking-tight leading-[1.05] mb-4">Natálie Vencovská</h1>
 <p class="text-[15px] text-black/60 mb-6">Designérka, odbornice na veřejný prostor</p>
 <div class="flex gap-3 mb-6">

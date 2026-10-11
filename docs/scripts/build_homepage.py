@@ -214,7 +214,7 @@ def build():
 <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-10" aria-hidden="true"></div>
 <div class="absolute left-4 bottom-[13%] z-20 leading-none">
 <div><p class="inline-block bg-pink text-ink font-name font-black text-[20px] px-4 py-2 mb-2">Natálie Vencovská</p></div>
-<div><p class="inline-block bg-[#012f2d] text-white font-bold text-[16px] leading-[1.4] px-4 py-2">Lídryně kandidátky<br/>Designérka, odbornice na veřejný prostor</p></div>
+<div><p class="inline-block bg-[#012f2d] text-white font-bold text-[16px] leading-[1.4] px-4 py-2">Zastupitelka města Brna<br/>Designérka, odbornice na veřejný prostor</p></div>
 </div>
 </div>
 
