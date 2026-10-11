@@ -186,7 +186,7 @@
             email_addresses: [{ address: emailInput.value.trim(), status: "subscribed" }],
           },
           add_tags: [CONFIG.tag, "brno-vsichni"],
-          triggers: { autoresponse: { enabled: false } },
+          triggers: { autoresponse: { enabled: true } },
         }),
       })
         .then(function (resp) {

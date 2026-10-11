@@ -61,6 +61,7 @@
         body: JSON.stringify({
           person: person,
           add_tags: ["brno_kampan", "brno-vsichni"],
+          triggers: { autoresponse: { enabled: true } },
         }),
       })
         .then(function (resp) {
