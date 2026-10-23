@@ -3,6 +3,7 @@
 Run from `docs/`:
     python3 scripts/build_koalicni_smlouva.py
 """
+import re
 from pathlib import Path
 
 from partials import nav_html, footer_html, person_modal_html, head_html, end_scripts_html, nbsp_single_letters
@@ -14,8 +15,50 @@ DATE = "23. 10. 2026"
 DATETIME = "2026-10-23T12:00:00+02:00"
 TITLE = "Koaliční smlouva"
 SUBTITLE = "pro Zastupitelstvo města Brna ve volebním období 2026–2030"
-DESCRIPTION = ("Plné znění koaliční smlouvy pro Zastupitelstvo města Brna na období 2026–2030: principy spolupráce, "
-               "rozdělení gescí v radě města, koordinace a dohodovací řízení.")
+DESCRIPTION = ("Plné znění koaliční smlouvy pro Zastupitelstvo města Brna na období 2026–2030 a její přílohy, "
+               "Programového prohlášení Rady města Brna pro roky 2026–2030.")
+ANNEX_MD = Path(__file__).resolve().parent / "programove_prohlaseni_2026_2030.md"
+ANNEX_ID = "programove-prohlaseni"
+
+
+def slugify(text):
+    import unicodedata
+    s = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def annex_html():
+    """Render the programme statement (simple Markdown: #, ##, ###, '- ' lists, paragraphs, ---)."""
+    out, toc, items = [], [], []
+
+    def flush():
+        if items:
+            out.append(ul(items))
+            items.clear()
+
+    for line in ANNEX_MD.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line.startswith("- "):
+            items.append(line[2:])
+            continue
+        flush()
+        if not line or line == "---" or line.startswith("# "):
+            continue
+        if line.startswith("### "):
+            out.append(f"<h4>{line[4:]}</h4>")
+        elif line.startswith("## "):
+            title = line[3:]
+            anchor = f"pp-{slugify(title)}"
+            toc.append((anchor, title))
+            out.append(f'<h3 id="{anchor}" class="scroll-mt-24">{title}</h3>')
+        elif toc:  # the lead sentence before the first chapter is rendered separately
+            out.append(p(line))
+    flush()
+    sep = '<span class="text-black/30 mx-2" aria-hidden="true">·</span>'
+    toc_html = sep.join(
+        f'<a class="underline underline-offset-2 decoration-black/30 hover:text-green-deep" href="#{a}">{t}</a>'
+        for a, t in toc)
+    return toc_html, "\n".join(out)
 
 
 def p(text):
@@ -196,11 +239,13 @@ BODY = [
 def build():
     prefix = "../"
     body_html = "\n".join(BODY)
+    toc_html, annex_body = annex_html()
     main_html = f'''<section class="bg-white py-20 px-14 max-md:py-12 max-md:px-5">
 <div class="mx-auto max-w-[800px]">
 <p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-6">Dokument · {DATE}</p>
 <h1 class="font-display text-ink font-black text-[56px] max-md:text-4xl uppercase tracking-tight leading-[1.1] mb-4">{TITLE}</h1>
-<p class="text-[20px] max-md:text-[18px] leading-[1.4] text-black/70 mb-10">{nbsp_single_letters(SUBTITLE)}</p>
+<p class="text-[20px] max-md:text-[18px] leading-[1.4] text-black/70 mb-6">{nbsp_single_letters(SUBTITLE)}</p>
+<p class="mb-10"><a class="btn btn-pink" href="#{ANNEX_ID}">Příloha č. 1: Programové prohlášení ↓</a></p>
 <article class="wysiwyg">
 {body_html}
 </article>
@@ -209,6 +254,18 @@ def build():
 <span class="wysiwyg-meta__label">Podepsáno:</span>
 <time datetime="{DATETIME}">{DATE}</time>
 </span>
+</div>
+<div id="{ANNEX_ID}" class="scroll-mt-24 mt-16 pt-12 border-t-4 border-green">
+<p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-4">Příloha č. 1 koaliční smlouvy</p>
+<h2 class="font-display text-ink font-black text-[44px] max-md:text-[30px] uppercase tracking-tight leading-[1.1] mb-6">Programové prohlášení Rady města Brna pro roky 2026–2030</h2>
+<p class="font-svgd text-[22px] max-md:text-[19px] leading-[1.45] text-ink mb-8">{nbsp_single_letters("Budeme řídit Brno jako moderní evropské město stojící na důvěře, partnerství a rozhodování co nejblíže lidem.")}</p>
+<nav aria-label="Kapitoly programového prohlášení" class="text-[15px] leading-[1.9] text-ink mb-10">
+<p class="font-name text-black/50 font-bold text-[12px] uppercase tracking-[0.14em] mb-1">Kapitoly:</p>
+<p>{toc_html}</p>
+</nav>
+<article class="wysiwyg">
+{annex_body}
+</article>
 </div>
 <div class="bg-[#f4faf6] p-8 max-md:p-6 mt-10">
 <p class="font-name font-black text-[22px] leading-tight text-ink mb-3">Co přesně jsme vyjednali?</p>

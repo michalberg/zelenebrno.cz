@@ -21,7 +21,7 @@ IMAGE_SMALL = "wp-content/uploads/sites/123/2026/10/zeleni-ve-vedeni-brna-768.jp
 
 BODY = [
     "<b>Brno, 23. 10. 2026</b> – Zelené Brno bude součástí vedení Brna pro volební období 2026–2030, jeho "
-    "zástupkyně a zástupci podepsali koaliční smlouvu. Do programového prohlášení rady města se dostaly klíčové "
+    "zástupkyně a zástupci podepsali <a href=\"../koalicni-smlouva/\">koaliční smlouvu</a>. Do <a href=\"../koalicni-smlouva/#programove-prohlaseni\">programového prohlášení rady města</a> se dostaly klíčové "
     "priority z volebního programu. Účast v koalici schválila hlasováním členská základna Strany zelených "
     "v Brně jasnou většinou.",
 
@@ -71,7 +71,7 @@ BODY = [
 
 def build():
     prefix = "../"
-    body_html = "\n".join(f"<p>{nbsp_single_letters(p)}</p>" for p in BODY)
+    body_html = "\n".join(f"<p>{nbsp_single_letters(p)}</p>" for p in BODY).replace("<a&nbsp;href", "<a href")
     main_html = f'''<section class="bg-white py-20 px-14 max-md:py-12 max-md:px-5">
 <div class="mx-auto max-w-[800px]">
 <p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-6">Tisková zpráva · {DATE}</p>
@@ -94,7 +94,7 @@ def build():
 <div class="flex gap-3 flex-wrap">
 <a class="btn btn-green" href="{prefix}#vyjednali">Co jsme prosadili →</a>
 <a class="btn btn-ink" href="{prefix}#otazky">Časté otázky →</a>
-<a class="btn btn-ink" href="{prefix}koalicni-smlouva/">Koaliční smlouva →</a>
+<a class="btn btn-pink" href="{prefix}koalicni-smlouva/">Koaliční smlouva a programové prohlášení →</a>
 </div>
 </div>
 </div>
