@@ -28,21 +28,30 @@ def slugify(text):
 
 
 def annex_html():
-    """Render the programme statement (simple Markdown: #, ##, ###, '- ' lists, paragraphs, ---)."""
-    out, toc, items = [], [], []
+    """Render the programme statement (simple Markdown: #, ##, ###, '- ' lists incl. one nested
+    level, *italic* chapter intros, paragraphs). Returns (lead, toc_html, body_html)."""
+    out, toc, items = [], [], []  # items: [text, [subitems]]
+    lead = ""
 
     def flush():
         if items:
-            out.append(ul(items))
+            lis = "\n".join(
+                f"<li>{nbsp_single_letters(t)}" + (f"\n{ul(sub)}" if sub else "") + "</li>" for t, sub in items)
+            out.append(f"<ul>\n{lis}\n</ul>")
             items.clear()
 
-    for line in ANNEX_MD.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
+    for raw in ANNEX_MD.read_text(encoding="utf-8").splitlines():
+        line = re.sub(r" - ", " – ", raw.strip())
         if line.startswith("- "):
-            items.append(line[2:])
+            if raw.startswith(("  ", "\t")) and items:
+                items[-1][1].append(line[2:])
+            else:
+                items.append([line[2:], []])
             continue
+        if not line or line == "---":
+            continue  # blank lines between list items keep the list together
         flush()
-        if not line or line == "---" or line.startswith("# "):
+        if line.startswith("# "):
             continue
         if line.startswith("### "):
             out.append(f"<h4>{line[4:]}</h4>")
@@ -51,14 +60,18 @@ def annex_html():
             anchor = f"pp-{slugify(title)}"
             toc.append((anchor, title))
             out.append(f'<h3 id="{anchor}" class="scroll-mt-24">{title}</h3>')
-        elif toc:  # the lead sentence before the first chapter is rendered separately
+        elif not toc:
+            lead = line
+        elif line.startswith("*") and line.endswith("*"):
+            out.append(f"<p><em>{nbsp_single_letters(line.strip('*'))}</em></p>")
+        else:
             out.append(p(line))
     flush()
     sep = '<span class="text-black/30 mx-2" aria-hidden="true">·</span>'
     toc_html = sep.join(
-        f'<a class="underline underline-offset-2 decoration-black/30 hover:text-green-deep" href="#{a}">{t}</a>'
+        f'<a class="whitespace-nowrap underline underline-offset-2 decoration-black/30 hover:text-green-deep" href="#{a}">{t}</a>'
         for a, t in toc)
-    return toc_html, "\n".join(out)
+    return lead, toc_html, "\n".join(out)
 
 
 def p(text):
@@ -239,7 +252,7 @@ BODY = [
 def build():
     prefix = "../"
     body_html = "\n".join(BODY)
-    toc_html, annex_body = annex_html()
+    annex_lead, toc_html, annex_body = annex_html()
     main_html = f'''<section class="bg-white py-20 px-14 max-md:py-12 max-md:px-5">
 <div class="mx-auto max-w-[800px]">
 <p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-6">Dokument · {DATE}</p>
@@ -257,8 +270,8 @@ def build():
 </div>
 <div id="{ANNEX_ID}" class="scroll-mt-24 mt-16 pt-12 border-t-4 border-green">
 <p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-4">Příloha č. 1 koaliční smlouvy</p>
-<h2 class="font-display text-ink font-black text-[64px] max-md:text-[40px] uppercase tracking-tight leading-[1.02] mb-8">Programové prohlášení Rady města Brna pro roky 2026–2030</h2>
-<p class="font-svgd text-[22px] max-md:text-[19px] leading-[1.45] text-ink mb-8">{nbsp_single_letters("Budeme řídit Brno jako moderní evropské město stojící na důvěře, partnerství a rozhodování co nejblíže lidem.")}</p>
+<h2 class="font-display text-ink font-black text-[64px] max-md:text-[40px] uppercase tracking-tight leading-[1.02] mb-8">Programové prohlášení Rady města Brna pro roky <span class="whitespace-nowrap">2026–2030</span></h2>
+<p class="font-svgd text-[22px] max-md:text-[19px] leading-[1.45] text-ink mb-8">{nbsp_single_letters(annex_lead)}</p>
 <nav aria-label="Kapitoly programového prohlášení" class="text-[15px] leading-[1.9] text-ink mb-10">
 <p class="font-name text-black/50 font-bold text-[12px] uppercase tracking-[0.14em] mb-1">Kapitoly:</p>
 <p>{toc_html}</p>
