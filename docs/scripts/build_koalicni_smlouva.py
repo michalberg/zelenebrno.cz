@@ -257,7 +257,7 @@ def build():
 </div>
 <div id="{ANNEX_ID}" class="scroll-mt-24 mt-16 pt-12 border-t-4 border-green">
 <p class="font-name text-green-deep font-bold text-[15px] uppercase tracking-[0.18em] mb-4">Příloha č. 1 koaliční smlouvy</p>
-<h2 class="font-display text-ink font-black text-[44px] max-md:text-[30px] uppercase tracking-tight leading-[1.1] mb-6">Programové prohlášení Rady města Brna pro roky 2026–2030</h2>
+<h2 class="font-display text-ink font-black text-[64px] max-md:text-[40px] uppercase tracking-tight leading-[1.02] mb-8">Programové prohlášení Rady města Brna pro roky 2026–2030</h2>
 <p class="font-svgd text-[22px] max-md:text-[19px] leading-[1.45] text-ink mb-8">{nbsp_single_letters("Budeme řídit Brno jako moderní evropské město stojící na důvěře, partnerství a rozhodování co nejblíže lidem.")}</p>
 <nav aria-label="Kapitoly programového prohlášení" class="text-[15px] leading-[1.9] text-ink mb-10">
 <p class="font-name text-black/50 font-bold text-[12px] uppercase tracking-[0.14em] mb-1">Kapitoly:</p>
