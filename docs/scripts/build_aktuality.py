@@ -10,6 +10,10 @@ DESCRIPTION = "Tiskové zprávy a aktuality koalice Zelené Brno k volbám do Za
 
 # (date, title, slug, image, description) — description feeds feed.xml, not the card.
 ITEMS = [
+    ("23.10.2026", "Zelení budou součástí vedení Brna, Natálie Vencovská má vést resort životního prostředí",
+     "zeleni-budou-soucasti-vedeni-brna/",
+     "wp-content/uploads/sites/123/2026/10/zeleni-ve-vedeni-brna-768.jpg",
+     "Zelené Brno podepsalo koaliční smlouvu na období 2026–2030. Do programového prohlášení rady města se dostaly klíčové priority z volebního programu."),
     ("12.8.2026", "Pojďte pohlídat volby!", "komise/",
      "wp-content/uploads/sites/123/2026/08/komise-1-768x512.png",
      "Staňte se členem nebo členkou okrskové volební komise a pohlídejte průběh voleb v Brně."),
