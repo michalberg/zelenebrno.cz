@@ -49,6 +49,7 @@ ALL_PAGES = [
     "prazdniny",
     "aktuality",
     "zeleni-budou-soucasti-vedeni-brna",
+    "koalicni-smlouva",
     "na-verejna-gymnazia-a-lycea-v-brne-se-dostala-mene-nez-polovina-uchazecu-zeleni-chteji-mestske-lyceum",
     "brno-ma-na-vic-rikaji-zeleni-v-siroke-koalici-spojili-zkusene-osobnosti-z-radnic-i-nove-tvare",
 ]
@@ -129,6 +130,7 @@ Volební program „Brno do detailu" po kapitolách:
 
 {line("aktuality")}
 {line("zeleni-budou-soucasti-vedeni-brna")}
+{line("koalicni-smlouva")}
 {line("na-verejna-gymnazia-a-lycea-v-brne-se-dostala-mene-nez-polovina-uchazecu-zeleni-chteji-mestske-lyceum")}
 {line("brno-ma-na-vic-rikaji-zeleni-v-siroke-koalici-spojili-zkusene-osobnosti-z-radnic-i-nove-tvare")}
 {line("prazdniny")}

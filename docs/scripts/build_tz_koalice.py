@@ -94,6 +94,7 @@ def build():
 <div class="flex gap-3 flex-wrap">
 <a class="btn btn-green" href="{prefix}#vyjednali">Co jsme prosadili →</a>
 <a class="btn btn-ink" href="{prefix}#otazky">Časté otázky →</a>
+<a class="btn btn-ink" href="{prefix}koalicni-smlouva/">Koaliční smlouva →</a>
 </div>
 </div>
 </div>
