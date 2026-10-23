@@ -41,7 +41,7 @@ def annex_html():
             items.clear()
 
     for raw in ANNEX_MD.read_text(encoding="utf-8").splitlines():
-        line = re.sub(r" - ", " – ", raw.strip())
+        line = re.sub(r" [-—] ", " – ", raw.strip())
         if line.startswith("- "):
             if raw.startswith(("  ", "\t")) and items:
                 items[-1][1].append(line[2:])
